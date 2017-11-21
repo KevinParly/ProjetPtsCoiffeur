@@ -2,11 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Acceuil</title>
+    <title>Acceuil de la gestion des stocks</title>
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-<h1>Bienvenue sur l'acceuil de l'application</h1>
-<a href="acceuilstock.html.twig"><button type="button">Stock</button></a><button type="button">Client</button><button type="button">Facture</button>
+    <h1>Bienvenue sur l'acceuil de gestion des stocks</h1>
+    <a href={{ path('ajoutproduit') }}>
+    <button type="button">Ajouter un produit</button>
+    </a>
+    <button type="button">Modifier un produit</button>
+    <button type="button">Afficher la liste des produits</button>
+    <button type="button">Ajouter une livraisons</button>
+    <button type="button">Afficher les couleurs</button>
 </body>
 </html>
