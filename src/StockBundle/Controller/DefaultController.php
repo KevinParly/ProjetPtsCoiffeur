@@ -8,6 +8,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
+     * @Route("/acceuilstock",name="acceuilstock")
+     */
+    public function acceuilStockAction(){
+        return $this->render('StockBundle:Default:acceuilstock.html.twig');
+    }
+
+    /**
      * @Route("/")
      */
     public function indexAction()
