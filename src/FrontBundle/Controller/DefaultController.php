@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("acceuil",name="acceuil")
+     * @Route("accueil",name="accueil")
      */
     public function acceuilAction(){
         return $this->render('FrontBundle:Default:acceuil.html.twig');
@@ -19,6 +19,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->redirectToRoute("acceuil");
+        return $this->redirectToRoute("accueil");
     }
 }
