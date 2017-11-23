@@ -7,6 +7,70 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
+  <style>
+    html{
+      height: 100%;
+    }
+    body{
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+    }
+
+    #side_nav_displayer{
+      display: block;
+      position : fixed;
+      height: 50px;
+      width : 50px;
+      top: 10px;
+      left: 10px;
+    }
+
+    #side_nav_displayer img{
+      height : 100%;
+      width: 100%;
+    }
+
+    #side_nav{
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #33363a;
+      width : 300px;
+      padding-top: 100px;
+    }
+  </style>
+  <div id="side_nav_displayer"><button><img src="{{ asset("bundles/front/images/menu.png") }}" title="Menu latéral"/></button></div>
+  <nav id="side_nav">
+    <ol>
+      <li>
+        <a href="">Client</a>
+      </li>
+      <li>
+        <a href="">Stock</a>
+      </li>
+      <li>
+        <a href="">Facture</a>
+      </li>
+    </ol>
+  </nav>
+
+  <script>
+    var sideNavButton = document.querySelector('#side_nav_displayer button');
+    var sideNav = document.querySelector('#side_nav');
+    var isDisplay = new Boolean(0);
+    sideNavButton.addEventListener('click',function() {
+      if(!isDisplay){
+        isDisplay = 1;
+        sideNav.style.width = "300px";
+        sideNav.style.display = "flex";
+      }else{
+        isDisplay = 0;
+        sideNav.style.width = "0px";
+        sideNav.style.display = "none";
+      };
+    });
+  </script>
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
 </body>

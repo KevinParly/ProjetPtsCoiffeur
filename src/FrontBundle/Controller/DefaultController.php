@@ -11,7 +11,7 @@ class DefaultController extends Controller
      * @Route("accueil",name="accueil")
      */
     public function acceuilAction(){
-        return $this->render('FrontBundle:Default:acceuil.html.twig');
+        return $this->render('FrontBundle:Default:accueil.html.twig');
     }
 
     /**
