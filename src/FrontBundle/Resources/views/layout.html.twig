@@ -11,19 +11,25 @@
     <script src="{{ asset("bundles/front/scripts/jquery.js") }}"></script>
     <div id="side_nav_displayer"><button><img src="{{ asset("bundles/front/images/menu.png") }}" title="Menu latéral"/></button></div>
     <nav id="side_nav">
-      <ol>
+      <ol class="quickMenu">
         <li>
-          <a href="">Client</a>
+          <a href=""><img src="{{ asset("bundles/front/images/addProductQuickButton.png") }}"/></a>
         </li>
         <li>
-          <a href="">Stock</a>
+          <a href=""><img src="{{ asset("bundles/front/images/changeProductQuickButton.png") }}"/></a>
         </li>
         <li>
-          <a href="">Facture</a>
+          <a href=""><img src="{{ asset("bundles/front/images/displayProductListQuickButton.png") }}"/></a>
+        </li>
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/addDeliveryListQuickButton.png") }}"/></a>
+        </li>
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/displayColorQuickButton.png") }}"/></a>
         </li>
       </ol>
+
     </nav>
-    <p id="test"></p>
     {% block body %}{% endblock %}
     {% block javascripts %}{% endblock %}
     <script src="{{ asset("bundles/front/scripts/secondaryMenu.js") }}"></script>
