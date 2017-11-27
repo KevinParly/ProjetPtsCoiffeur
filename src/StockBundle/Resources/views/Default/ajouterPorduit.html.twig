@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>Ajouter un produit</title>
+{% extends "FrontBundle::layout.html.twig" %}
+
+{% block title %}Ajouter un produit{% endblock %}
+{% block stylesheets %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<body>
+{% endblock %}
+{% block body %}
     <h1>Remplir les champs pour ajouter un produits</h1>
-    <form>
+      <form>
         <label>Libelé du produit</label>
         <input type="text" name="nomProduit"><br>
         <label>Type de produit</label>
@@ -15,36 +14,35 @@
         <label><input type="radio" name="Type" >Vente</label><br>
         <label>Catégorie</label>
         <select name="boiteCategorie">
-            <option>soins cheveux</option>
-            <option>coupe homme</option>
-            <option>couleur</option>
-            <option>permanante</option>
+          <option>soins cheveux</option>
+          <option>coupe homme</option>
+          <option>couleur</option>
+          <option>permanante</option>
         </select><br>
         <label>Prix unitaire</label>
         <input type="text" name="PrixUnitaire">
         <button class="btn btn-success" type="button">Valider</button>
-    </form>
-    <h1>La liste des produits deja disponiblent</h1>
-    <table>
+      </form>
+      <h1>La liste des produits deja disponiblent</h1>
+      <table>
         <tr>
-            <td>Libelé</td>
-            <td>Type</td>
-            <td>Catégorie</td>
-            <td>Prix unitaire</td>
+          <td>Libelé</td>
+          <td>Type</td>
+          <td>Catégorie</td>
+          <td>Prix unitaire</td>
         </tr>
         <tr>
-            <td>Shampoing</td>
-            <td>Vente</td>
-            <td>Soins cheveux</td>
-            <td>5.00€</td>
+          <td>Shampoing</td>
+          <td>Vente</td>
+          <td>Soins cheveux</td>
+          <td>5.00€</td>
         </tr>
         <tr>
-            <td>Coupe Mulet</td>
-            <td>Prestation</td>
-            <td>Coupe homme</td>
-            <td>12.99€</td>
+          <td>Coupe Mulet</td>
+          <td>Prestation</td>
+          <td>Coupe homme</td>
+          <td>12.99€</td>
         </tr>
-    </table>
-    <a href={{ path('acceuilstock') }}><button type="button">Retour</button></a>
-</body>
-</html>
+      </table>
+      <a href={{ path('acceuilstock') }}><button type="button">Retour</button></a>
+{% endblock %}

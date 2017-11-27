@@ -19,7 +19,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('StockBundle:Default:index.html.twig');
+        return $this->redirectToRoute("accueil");
     }
 
     /**
