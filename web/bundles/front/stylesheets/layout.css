@@ -42,7 +42,12 @@ body{
   height: 100px;
 }
 
-.quickMenu li a img{
+.quickMenu img{
   width: 100%;
   height: 100%;
+  opacity: 0.8;
+}
+
+.quickMenu img:hover{
+  opacity: 1;
 }
