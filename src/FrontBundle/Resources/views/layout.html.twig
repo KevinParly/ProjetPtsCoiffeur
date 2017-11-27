@@ -8,6 +8,7 @@
       <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
   </head>
   <body>
+    <script src="{{ asset("bundles/front/scripts/jquery.js") }}">
     <div id="side_nav_displayer"><button><img src="{{ asset("bundles/front/images/menu.png") }}" title="Menu latéral"/></button></div>
     <nav id="side_nav">
       <ol class="quickMenu">
@@ -27,7 +28,6 @@
           <a href=""><img src="{{ asset("bundles/front/images/displayColorQuickButton.png") }}"/></a>
         </li>
       </ol>
-
     </nav>
     {% block body %}{% endblock %}
     {% block javascripts %}{% endblock %}
