@@ -103,22 +103,30 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/accueil')) {
-            // accueilstock
-            if ('/accueilstock' === $pathinfo) {
-                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::acceuilStockAction',  '_route' => 'accueilstock',);
+        elseif (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/accueil')) {
+                // accueilstock
+                if ('/accueilstock' === $pathinfo) {
+                    return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::acceuilStockAction',  '_route' => 'accueilstock',);
+                }
+
+                // accueil
+                if ('/accueil' === $pathinfo) {
+                    return array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::acceuilAction',  '_route' => 'accueil',);
+                }
+
             }
 
-            // accueil
-            if ('/accueil' === $pathinfo) {
-                return array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::acceuilAction',  '_route' => 'accueil',);
+            // ajoutproduit
+            if ('/ajoutproduit' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::ajoutProduitAction',  '_route' => 'ajoutproduit',);
             }
 
-        }
+            // ajoutlivraison
+            if ('/ajoutlivraison' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::ajoutLivraison',  '_route' => 'ajoutlivraison',);
+            }
 
-        // ajoutproduit
-        if ('/ajoutproduit' === $pathinfo) {
-            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::ajoutProduitAction',  '_route' => 'ajoutproduit',);
         }
 
         // stock_default_index
