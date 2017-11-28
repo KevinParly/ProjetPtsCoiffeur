@@ -11,9 +11,9 @@
     <script src="{{ asset("bundles/front/scripts/jquery.js") }}"></script>
     <div id="side_nav_displayer"><button><img src="{{ asset("bundles/front/images/menu.png") }}" title="Menu latéral"/></button></div>
     <nav id="side_nav">
-      <ol class="quickMenu">
+      <ol class="quickMenu firstQuickMenu">
         <li>
-          <a href=""><img src="{{ asset("bundles/front/images/addProductQuickButton.png") }}"/></a>
+          <a href="{{ path('ajoutproduit') }}"><img src="{{ asset("bundles/front/images/addProductQuickButton.png") }}"/></a>
           <p>Ajouter un produit</p>
         </li>
         <li>
@@ -49,7 +49,7 @@
         </li>
       </ol>
 
-      <ol class="quickMenu">
+      <ol class="quickMenu lastQuickMenu">
         <li>
           <a href=""><img src="{{ asset("bundles/front/images/addBillQuickButton.png") }}"/></a>
           <p>Créer une facture</p>

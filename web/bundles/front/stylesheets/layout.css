@@ -38,9 +38,9 @@ body{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 0px;
   height: 100%;
-  min-height: 615px;
+  min-height: 780px;
   overflow: hidden;
   background-color: rgba(0,0,0,0.8);
 }
@@ -52,7 +52,7 @@ body{
   width: 50%;
   margin: auto;
   padding: 0;
-  max-width: 740px;
+  max-width: 780px;
   min-width: 550px;
   list-style: none;
 }
@@ -80,6 +80,14 @@ body{
 .quickMenu img:hover{
   opacity: 1;
   transform: scale(1.2);
-  z-index: 4;
+  z-index: 1;
   transition: all 0.2s;
+}
+
+.lastQuickMenu{
+  margin-bottom: 150px;
+}
+
+.firstQuickMenu{
+  margin-top: 150px;
 }

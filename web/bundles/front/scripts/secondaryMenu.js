@@ -1,5 +1,5 @@
 $(function(){
-  var isDisplayed = true;
+  var isDisplayed = false;
   $('#side_nav_displayer button').click(function(){
     if(!isDisplayed){
       isDisplayed = true;
