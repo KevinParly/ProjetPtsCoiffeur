@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta charset="UTF-8" />
-      <title>{% block title %}Welcome!{% endblock %}</title>
+      <title>TITRE</title>
       {% block stylesheets %}{% endblock %}
       <link rel="stylesheet" type="text/css" href="{{ asset("bundles/front/stylesheets/layout.css") }}"/>
       <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -20,6 +20,36 @@
         </li>
         <li>
           <a href=""><img src="{{ asset("bundles/front/images/displayProductListQuickButton.png") }}"/></a>
+        </li>
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/addDeliveryQuickButton.png") }}"/></a>
+        </li>
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/displayColorListQuickButton.png") }}"/></a>
+        </li>
+      </ol>
+
+      <ol class="quickMenu">
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/addClientQuickButton.png") }}"/></a>
+        </li>
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/changeClientQuickButton.png") }}"/></a>
+        </li>
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/displayClientListQuickButton.png") }}"/></a>
+        </li>
+      </ol>
+
+      <ol class="quickMenu">
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/addClientQuickButton.png") }}"/></a>
+        </li>
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/changeClientQuickButton.png") }}"/></a>
+        </li>
+        <li>
+          <a href=""><img src="{{ asset("bundles/front/images/displayClientListQuickButton.png") }}"/></a>
         </li>
       </ol>
     </nav>
