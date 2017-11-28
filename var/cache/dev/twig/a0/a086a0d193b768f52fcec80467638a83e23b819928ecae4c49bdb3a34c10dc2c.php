@@ -23,70 +23,70 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_312811547ad915f77787fcb4297fbb81d56c7cc9f18d7d4433e69bedb3f4a182 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_312811547ad915f77787fcb4297fbb81d56c7cc9f18d7d4433e69bedb3f4a182->enter($__internal_312811547ad915f77787fcb4297fbb81d56c7cc9f18d7d4433e69bedb3f4a182_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "StockBundle:Default:ajouterPorduit.html.twig"));
+        $__internal_58273550fade2faf3dd985c140d8233135d3b9beea183f1049f23407f7c454fe = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_58273550fade2faf3dd985c140d8233135d3b9beea183f1049f23407f7c454fe->enter($__internal_58273550fade2faf3dd985c140d8233135d3b9beea183f1049f23407f7c454fe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "StockBundle:Default:ajouterPorduit.html.twig"));
 
-        $__internal_c490e635110d8ae0641974da9449c0295862e3ce669bc58d425dbcd14b1d7380 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c490e635110d8ae0641974da9449c0295862e3ce669bc58d425dbcd14b1d7380->enter($__internal_c490e635110d8ae0641974da9449c0295862e3ce669bc58d425dbcd14b1d7380_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "StockBundle:Default:ajouterPorduit.html.twig"));
+        $__internal_671979f7288deabfa77c561e653b5c57d1b73dcd2af02194559b451cc924d835 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_671979f7288deabfa77c561e653b5c57d1b73dcd2af02194559b451cc924d835->enter($__internal_671979f7288deabfa77c561e653b5c57d1b73dcd2af02194559b451cc924d835_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "StockBundle:Default:ajouterPorduit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_312811547ad915f77787fcb4297fbb81d56c7cc9f18d7d4433e69bedb3f4a182->leave($__internal_312811547ad915f77787fcb4297fbb81d56c7cc9f18d7d4433e69bedb3f4a182_prof);
+        $__internal_58273550fade2faf3dd985c140d8233135d3b9beea183f1049f23407f7c454fe->leave($__internal_58273550fade2faf3dd985c140d8233135d3b9beea183f1049f23407f7c454fe_prof);
 
         
-        $__internal_c490e635110d8ae0641974da9449c0295862e3ce669bc58d425dbcd14b1d7380->leave($__internal_c490e635110d8ae0641974da9449c0295862e3ce669bc58d425dbcd14b1d7380_prof);
+        $__internal_671979f7288deabfa77c561e653b5c57d1b73dcd2af02194559b451cc924d835->leave($__internal_671979f7288deabfa77c561e653b5c57d1b73dcd2af02194559b451cc924d835_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_7e9c5c16a3a63a5f0629ef44d9b6bb8151a6f7b251fa9bcd2b9d8e73b3c3dc8c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7e9c5c16a3a63a5f0629ef44d9b6bb8151a6f7b251fa9bcd2b9d8e73b3c3dc8c->enter($__internal_7e9c5c16a3a63a5f0629ef44d9b6bb8151a6f7b251fa9bcd2b9d8e73b3c3dc8c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_7772711e830a4f3b04ec01069202675367971568ddd5e332128dcfb833558ea9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_7772711e830a4f3b04ec01069202675367971568ddd5e332128dcfb833558ea9->enter($__internal_7772711e830a4f3b04ec01069202675367971568ddd5e332128dcfb833558ea9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_89b20a80866fdea31216502da4fe2ddc271d6b7ad3b6d185701999abeb6d8dce = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_89b20a80866fdea31216502da4fe2ddc271d6b7ad3b6d185701999abeb6d8dce->enter($__internal_89b20a80866fdea31216502da4fe2ddc271d6b7ad3b6d185701999abeb6d8dce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_08deab2e79e93d857f9f8658e7923f6ae533f125c975b08aa81f0e20dde8cc27 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_08deab2e79e93d857f9f8658e7923f6ae533f125c975b08aa81f0e20dde8cc27->enter($__internal_08deab2e79e93d857f9f8658e7923f6ae533f125c975b08aa81f0e20dde8cc27_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Ajouter un produit";
         
-        $__internal_89b20a80866fdea31216502da4fe2ddc271d6b7ad3b6d185701999abeb6d8dce->leave($__internal_89b20a80866fdea31216502da4fe2ddc271d6b7ad3b6d185701999abeb6d8dce_prof);
+        $__internal_08deab2e79e93d857f9f8658e7923f6ae533f125c975b08aa81f0e20dde8cc27->leave($__internal_08deab2e79e93d857f9f8658e7923f6ae533f125c975b08aa81f0e20dde8cc27_prof);
 
         
-        $__internal_7e9c5c16a3a63a5f0629ef44d9b6bb8151a6f7b251fa9bcd2b9d8e73b3c3dc8c->leave($__internal_7e9c5c16a3a63a5f0629ef44d9b6bb8151a6f7b251fa9bcd2b9d8e73b3c3dc8c_prof);
+        $__internal_7772711e830a4f3b04ec01069202675367971568ddd5e332128dcfb833558ea9->leave($__internal_7772711e830a4f3b04ec01069202675367971568ddd5e332128dcfb833558ea9_prof);
 
     }
 
     // line 4
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_90d106bbe70dda9b212dc8ee136b5b01e212c3dddb2f669d49c0f640c183e043 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_90d106bbe70dda9b212dc8ee136b5b01e212c3dddb2f669d49c0f640c183e043->enter($__internal_90d106bbe70dda9b212dc8ee136b5b01e212c3dddb2f669d49c0f640c183e043_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_c7bddcc9d08d4a902264e86089008dcf2279873b996e75aaf378a093e3ff8468 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c7bddcc9d08d4a902264e86089008dcf2279873b996e75aaf378a093e3ff8468->enter($__internal_c7bddcc9d08d4a902264e86089008dcf2279873b996e75aaf378a093e3ff8468_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        $__internal_6a5a6b32de714f18c7a7da0332da1384fc97aa1a4111e69a232f9e0cebff2316 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6a5a6b32de714f18c7a7da0332da1384fc97aa1a4111e69a232f9e0cebff2316->enter($__internal_6a5a6b32de714f18c7a7da0332da1384fc97aa1a4111e69a232f9e0cebff2316_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_5d80e1995607f23a8783dc4d1dfae41533cdff0d3f32ae46320141f717845ea2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5d80e1995607f23a8783dc4d1dfae41533cdff0d3f32ae46320141f717845ea2->enter($__internal_5d80e1995607f23a8783dc4d1dfae41533cdff0d3f32ae46320141f717845ea2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 5
         echo "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">
 ";
         
-        $__internal_6a5a6b32de714f18c7a7da0332da1384fc97aa1a4111e69a232f9e0cebff2316->leave($__internal_6a5a6b32de714f18c7a7da0332da1384fc97aa1a4111e69a232f9e0cebff2316_prof);
+        $__internal_5d80e1995607f23a8783dc4d1dfae41533cdff0d3f32ae46320141f717845ea2->leave($__internal_5d80e1995607f23a8783dc4d1dfae41533cdff0d3f32ae46320141f717845ea2_prof);
 
         
-        $__internal_90d106bbe70dda9b212dc8ee136b5b01e212c3dddb2f669d49c0f640c183e043->leave($__internal_90d106bbe70dda9b212dc8ee136b5b01e212c3dddb2f669d49c0f640c183e043_prof);
+        $__internal_c7bddcc9d08d4a902264e86089008dcf2279873b996e75aaf378a093e3ff8468->leave($__internal_c7bddcc9d08d4a902264e86089008dcf2279873b996e75aaf378a093e3ff8468_prof);
 
     }
 
     // line 7
     public function block_body($context, array $blocks = array())
     {
-        $__internal_1465ce726e5e405fdcee285ac632f63f37a192fbb547746149653f17a9febda1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1465ce726e5e405fdcee285ac632f63f37a192fbb547746149653f17a9febda1->enter($__internal_1465ce726e5e405fdcee285ac632f63f37a192fbb547746149653f17a9febda1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b02e1d152a0cb0d9b92e350c7fa16183f86778f86b7d43d9baf7420346067b81 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_b02e1d152a0cb0d9b92e350c7fa16183f86778f86b7d43d9baf7420346067b81->enter($__internal_b02e1d152a0cb0d9b92e350c7fa16183f86778f86b7d43d9baf7420346067b81_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_a7aa6030161a0df7a5ac4e4b44c41e0ec54e0ec00aaeecd99b1d1b296c53050d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a7aa6030161a0df7a5ac4e4b44c41e0ec54e0ec00aaeecd99b1d1b296c53050d->enter($__internal_a7aa6030161a0df7a5ac4e4b44c41e0ec54e0ec00aaeecd99b1d1b296c53050d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_0098b63076d1e60078b4c964afad86b6aa80780e1066d7526d1cb91fefe18b84 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0098b63076d1e60078b4c964afad86b6aa80780e1066d7526d1cb91fefe18b84->enter($__internal_0098b63076d1e60078b4c964afad86b6aa80780e1066d7526d1cb91fefe18b84_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
-        echo "    <h1>Remplir les champs pour ajouter un produits</h1>
+        echo "    <h1>Remplir les champs pour ajouter un produit</h1>
       <form>
         <label>Libelé du produit</label>
         <input type=\"text\" name=\"nomProduit\"><br>
@@ -95,7 +95,7 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
         <label><input type=\"radio\" name=\"Type\" >Vente</label><br>
         <label>Catégorie</label>
         <select name=\"boiteCategorie\">
-          <option>soins cheveux</option>
+          <option>soin cheveux</option>
           <option>coupe homme</option>
           <option>couleur</option>
           <option>permanante</option>
@@ -104,7 +104,7 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
         <input type=\"text\" name=\"PrixUnitaire\">
         <button class=\"btn btn-success\" type=\"button\">Valider</button>
       </form>
-      <h1>La liste des produits deja disponiblent</h1>
+      <h1>La liste des produits déjà disponibles</h1>
       <table>
         <tr>
           <td>Libelé</td>
@@ -115,7 +115,7 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
         <tr>
           <td>Shampoing</td>
           <td>Vente</td>
-          <td>Soins cheveux</td>
+          <td>Soin cheveux</td>
           <td>5.00€</td>
         </tr>
         <tr>
@@ -127,14 +127,14 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
       </table>
       <a href=";
         // line 47
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("acceuilstock");
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("accueilstock");
         echo "><button type=\"button\">Retour</button></a>
 ";
         
-        $__internal_a7aa6030161a0df7a5ac4e4b44c41e0ec54e0ec00aaeecd99b1d1b296c53050d->leave($__internal_a7aa6030161a0df7a5ac4e4b44c41e0ec54e0ec00aaeecd99b1d1b296c53050d_prof);
+        $__internal_0098b63076d1e60078b4c964afad86b6aa80780e1066d7526d1cb91fefe18b84->leave($__internal_0098b63076d1e60078b4c964afad86b6aa80780e1066d7526d1cb91fefe18b84_prof);
 
         
-        $__internal_1465ce726e5e405fdcee285ac632f63f37a192fbb547746149653f17a9febda1->leave($__internal_1465ce726e5e405fdcee285ac632f63f37a192fbb547746149653f17a9febda1_prof);
+        $__internal_b02e1d152a0cb0d9b92e350c7fa16183f86778f86b7d43d9baf7420346067b81->leave($__internal_b02e1d152a0cb0d9b92e350c7fa16183f86778f86b7d43d9baf7420346067b81_prof);
 
     }
 
@@ -170,7 +170,7 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">
 {% endblock %}
 {% block body %}
-    <h1>Remplir les champs pour ajouter un produits</h1>
+    <h1>Remplir les champs pour ajouter un produit</h1>
       <form>
         <label>Libelé du produit</label>
         <input type=\"text\" name=\"nomProduit\"><br>
@@ -179,7 +179,7 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
         <label><input type=\"radio\" name=\"Type\" >Vente</label><br>
         <label>Catégorie</label>
         <select name=\"boiteCategorie\">
-          <option>soins cheveux</option>
+          <option>soin cheveux</option>
           <option>coupe homme</option>
           <option>couleur</option>
           <option>permanante</option>
@@ -188,7 +188,7 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
         <input type=\"text\" name=\"PrixUnitaire\">
         <button class=\"btn btn-success\" type=\"button\">Valider</button>
       </form>
-      <h1>La liste des produits deja disponiblent</h1>
+      <h1>La liste des produits déjà disponibles</h1>
       <table>
         <tr>
           <td>Libelé</td>
@@ -199,7 +199,7 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
         <tr>
           <td>Shampoing</td>
           <td>Vente</td>
-          <td>Soins cheveux</td>
+          <td>Soin cheveux</td>
           <td>5.00€</td>
         </tr>
         <tr>
@@ -209,7 +209,7 @@ class __TwigTemplate_92ce5078c7cfc23d775de185e03c68a48553277106e2eb98f11088b834c
           <td>12.99€</td>
         </tr>
       </table>
-      <a href={{ path('acceuilstock') }}><button type=\"button\">Retour</button></a>
+      <a href={{ path('accueilstock') }}><button type=\"button\">Retour</button></a>
 {% endblock %}
 ", "StockBundle:Default:ajouterPorduit.html.twig", "/home/kevin/Dropbox/ProjetPtsCoiffeur/src/StockBundle/Resources/views/Default/ajouterPorduit.html.twig");
     }

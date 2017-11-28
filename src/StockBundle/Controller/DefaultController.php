@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/acceuilstock",name="acceuilstock")
+     * @Route("/accueilstock",name="accueilstock")
      */
     public function acceuilStockAction(){
         return $this->render('StockBundle:Default:acceuilstock.html.twig');
