@@ -35,4 +35,11 @@ class DefaultController extends Controller
     public function listProduitModif(){
         return $this->render('StockBundle:Default:listProduitModif.html.twig');
     }
+
+    /**
+    * @Route("/listeproduit",name="listeproduit")
+    */
+    public function listeProduit(){
+       return $this->render('StockBundle:Default:listProduit.html.twig');
+    }
 }

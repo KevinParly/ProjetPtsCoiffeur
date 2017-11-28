@@ -1,0 +1,51 @@
+{% extends "FrontBundle::layout.html.twig" %}
+
+{% block title %}Accueil de la gestion des stocks{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+    <h1>Option de recherche</h1>
+    <p>Type de produit</p>
+      <select>
+        <option selected="">Choisir un type</option>
+        <option>Vente</option>
+        <option>Prestation</option>
+      </select>
+    <p>Catégorie de produit</p>
+    <select>
+      <option selected="">Choisir une catégorie</option>
+      <option>Coupe femme</option>
+      <option>Coupe homme</option>
+      <option>Couleur</option>
+    </select>
+    <h1>Liste des produits</h1>
+    <table>
+      <tr>
+        <td>Libelé</td>
+        <td>Type</td>
+        <td>Catégorie</td>
+        <td>Prix unitaire</td>
+        <td>Stock disponible</td>
+        <td>Nombre vendu</td>
+      </tr>
+      <tr>
+        <td>Shampoing</td>
+        <td>Vente</td>
+        <td>Soin cheveux</td>
+        <td>5.00€</td>
+        <td>10</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Coupe Mulet</td>
+        <td>Prestation</td>
+        <td>Coupe homme</td>
+        <td>12.99€</td>
+        <td>10</td>
+        <td>5</td>
+      </tr>
+    </table>
+    <a href={{ path('accueilstock') }}><button type="button">Retour</button></a>
+{% endblock %}

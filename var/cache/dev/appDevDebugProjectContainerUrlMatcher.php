@@ -135,6 +135,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listProduitModif',  '_route' => 'listproduitmodif',);
         }
 
+        // listeproduit
+        if ('/listeproduit' === $pathinfo) {
+            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeProduit',  '_route' => 'listeproduit',);
+        }
+
         // front_default_index
         if ('' === $trimmedPathinfo) {
             if (substr($pathinfo, -1) !== '/') {
