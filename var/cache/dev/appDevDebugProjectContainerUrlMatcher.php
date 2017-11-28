@@ -103,10 +103,10 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/a')) {
-            // acceuilstock
-            if ('/acceuilstock' === $pathinfo) {
-                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::acceuilStockAction',  '_route' => 'acceuilstock',);
+        elseif (0 === strpos($pathinfo, '/accueil')) {
+            // accueilstock
+            if ('/accueilstock' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::acceuilStockAction',  '_route' => 'accueilstock',);
             }
 
             // accueil
@@ -114,11 +114,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::acceuilAction',  '_route' => 'accueil',);
             }
 
-            // ajoutproduit
-            if ('/ajoutproduit' === $pathinfo) {
-                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::ajoutProduitAction',  '_route' => 'ajoutproduit',);
-            }
+        }
 
+        // ajoutproduit
+        if ('/ajoutproduit' === $pathinfo) {
+            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::ajoutProduitAction',  '_route' => 'ajoutproduit',);
         }
 
         // stock_default_index
@@ -133,6 +133,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // listproduitmodif
         if ('/listproduitmodif' === $pathinfo) {
             return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listProduitModif',  '_route' => 'listproduitmodif',);
+        }
+
+        // listeproduit
+        if ('/listeproduit' === $pathinfo) {
+            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeProduit',  '_route' => 'listeproduit',);
         }
 
         // front_default_index

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 {% endblock %}
 {% block body %}
-    <h1>Remplir les champs pour ajouter un produits</h1>
+    <h1>Remplir les champs pour ajouter un produit</h1>
       <form>
         <label>Libelé du produit</label>
         <input type="text" name="nomProduit"><br>
@@ -14,7 +14,7 @@
         <label><input type="radio" name="Type" >Vente</label><br>
         <label>Catégorie</label>
         <select name="boiteCategorie">
-          <option>soins cheveux</option>
+          <option>soin cheveux</option>
           <option>coupe homme</option>
           <option>couleur</option>
           <option>permanante</option>
@@ -23,7 +23,7 @@
         <input type="text" name="PrixUnitaire">
         <button class="btn btn-success" type="button">Valider</button>
       </form>
-      <h1>La liste des produits deja disponiblent</h1>
+      <h1>La liste des produits déjà disponibles</h1>
       <table>
         <tr>
           <td>Libelé</td>
@@ -34,7 +34,7 @@
         <tr>
           <td>Shampoing</td>
           <td>Vente</td>
-          <td>Soins cheveux</td>
+          <td>Soin cheveux</td>
           <td>5.00€</td>
         </tr>
         <tr>
@@ -44,5 +44,5 @@
           <td>12.99€</td>
         </tr>
       </table>
-      <a href={{ path('acceuilstock') }}><button type="button">Retour</button></a>
+      <a href={{ path('accueilstock') }}><button type="button">Retour</button></a>
 {% endblock %}

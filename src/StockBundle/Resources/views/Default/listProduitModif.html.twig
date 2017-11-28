@@ -5,29 +5,56 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 {% endblock %}
 {% block body %}
-<h1>La liste des produits deja disponiblent</h1>
-<table>
-  <tr>
-    <td>Libelé</td>
-    <td>Type</td>
-    <td>Catégorie</td>
-    <td>Prix unitaire</td>
-    <td><button>Modifier</button></td>
-  </tr>
-  <tr>
-    <td>Shampoing</td>
-    <td>Vente</td>
-    <td>Soins cheveux</td>
-    <td>5.00€</td>
-    <td><button>Modifier</button></td>
-  </tr>
-  <tr>
-    <td>Coupe Mulet</td>
-    <td>Prestation</td>
-    <td>Coupe homme</td>
-    <td>12.99€</td>
-    <td><button>Modifier</button></td>
-  </tr>
-</table>
-<a href={{ path('acceuilstock') }}><button type="button">Retour</button></a>
+<h1>La liste des produits</h1>
+<form>
+  <table>
+    <tr>
+      <td>Libelé</td>
+      <td>Type</td>
+      <td>Catégorie</td>
+      <td>Prix unitaire</td>
+      <td>Quantité Disponible</td>
+    </tr>
+    <tr>
+      <td><input type="text" value="Shampoing"></td>
+      <td><select name="boiteType">
+            <option>Prestation</option>
+            <option selected="" >Vente</option>
+          </select>
+      </td>
+      <td>
+        <select name="boiteCategorie">
+          <option selected="" >soin cheveux</option>
+          <option>coupe homme</option>
+          <option>couleur</option>
+          <option>permanante</option>
+        </select>
+      </td>
+      <td><input type="text" value="5,00"></td>
+      <td><input type="text" value="10"></td>
+      <td><button>Modifier</button></td>
+    </tr>
+    <tr>
+      <td><input type="text" value="Coupe Mulet"></td>
+      <td>
+          <select name="boiteType">
+            <option  selected=""  >Prestation</option>
+            <option>Vente</option>
+          </select>
+      </td>
+      <td>
+        <select name="boiteCategorie">
+          <option  selected="">coupe homme</option>
+          <option>couleur</option>
+          <option>soin cheveux</option>
+          <option>permanante</option>
+        </select>
+      </td>
+      <td><input type="texte" value="12.99"></td>
+      <td><input type="text" value="10"></td>
+      <td><button>Modifier</button></td>
+    </tr>
+  </table>
+</form>
+<a href={{ path('accueilstock') }}><button type="button">Retour</button></a>
 {% endblock %}

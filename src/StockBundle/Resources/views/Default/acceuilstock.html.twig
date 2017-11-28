@@ -6,14 +6,16 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Bienvenue sur l'acceuil de gestion des stocks</h1>
+    <h1>Bienvenue sur l'accueil de la gestion des stocks</h1>
       <a href={{ path('ajoutproduit') }}>
         <button type="button">Ajouter un produit</button>
       </a>
       <a href={{ path('listproduitmodif') }}>
         <button type="button">Modifier un produit</button>
       </a>
-      <button type="button">Afficher la liste des produits</button>
-      <button type="button">Ajouter une livraisons</button>
+      <a href={{ path('listeproduit') }}>
+        <button type="button">Afficher la liste des produits</button>
+      </a>
+      <button type="button">Ajouter une livraison</button>
       <button type="button">Afficher les couleurs</button>
 {% endblock %}
