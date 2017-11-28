@@ -42,4 +42,11 @@ class DefaultController extends Controller
     public function listeProduit(){
        return $this->render('StockBundle:Default:listProduit.html.twig');
     }
+
+    /**
+    * @Route("/ajoutlivraison",name="ajoutlivraison")
+    */
+    public function ajoutLivraison(){
+      return $this->render('StockBundle:Default:ajoutLivraison.html.twig');
+    }
 }
