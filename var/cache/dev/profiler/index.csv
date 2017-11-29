@@ -693,3 +693,6 @@ e2d5ce,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web
 a6f9a0,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511950244,,200
 ffb04d,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511950294,,200
 >>>>>>> bfa1d094378556deab98eb9ac3551d271eb6f96b
+f130fd,::1,GET,http://localhost2/ProjetPtsCoiffeur/web/app_dev.php/accueil,1511952388,,200
+39df91,::1,GET,http://localhost2/ProjetPtsCoiffeur/web/app_dev.php/listecouleur,1511952391,,200
+132a59,::1,GET,http://localhost2/ProjetPtsCoiffeur/web/app_dev.php/accueilstock,1511952394,,200
