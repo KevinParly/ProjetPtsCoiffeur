@@ -49,4 +49,11 @@ class DefaultController extends Controller
     public function ajoutLivraison(){
       return $this->render('StockBundle:Default:ajoutLivraison.html.twig');
     }
+
+    /**
+    * @Route("/listecouleur",name="listecouleur")
+    */
+    public function listeCouleur(){
+      return $this->render('StockBundle:Default:listeCouleur.html.twig');
+    }
 }

@@ -1,0 +1,31 @@
+{% extends "FrontBundle::layout.html.twig" %}
+
+{% block title %}Ajouter une livraison{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+<h1>Liste des couleurs disponibles</h1>
+<table>
+  <tr>
+    <td>Libelé</td>
+    <td>Type</td>
+    <td>Catégorie</td>
+    <td>Prix unitaire</td>
+  </tr>
+  <tr>
+    <td>Noir</td>
+    <td>Prestation</td>
+    <td>Couleur Cheveux</td>
+    <td>15.00€</td>
+  </tr>
+  <tr>
+    <td>Blond</td>
+    <td>Prestation</td>
+    <td>Couleur</td>
+    <td>12.99€</td>
+  </tr>
+</table>
+    <a href={{ path('accueilstock') }}><button type="button">Retour</button></a>
+{% endblock %}

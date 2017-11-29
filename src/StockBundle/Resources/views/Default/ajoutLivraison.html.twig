@@ -7,4 +7,15 @@
 
 {% block body %}
   <h1>Remplir les champs textuels pour ajouter une livraison</h1>
+  <form>
+    <label>Entreprise</label> <input type="text"><br>
+    <label>Date de reçu de la livraison</label> <input type="date"><br>
+    <label>Produit livré</label>
+    <select>
+      <option>Shampoing</option>
+      <option>Ciseaux</option>
+    </select>
+    <input type="submit">
+  </form>
+  <a href={{ path('accueilstock') }}><button type="button">Retour</button></a>
 {% endblock %}
