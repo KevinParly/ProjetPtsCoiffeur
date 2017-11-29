@@ -679,3 +679,9 @@ c9d5e2,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web
 a603d3,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/listecouleur,1511949777,,200
 0653b1,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/listeproduit,1511949788,,200
 0d16e4,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511949795,,200
+a7201b,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511950148,,200
+827c48,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511950165,,200
+e2d5ce,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511950184,,200
+41cb93,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511950205,,200
+a6f9a0,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511950244,,200
+ffb04d,172.17.0.1,GET,http://127.0.0.1:9998/ProjetCoiffeur/ProjetPtsCoiffeur/web/app_dev.php/ajoutproduit,1511950294,,200

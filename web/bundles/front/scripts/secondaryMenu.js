@@ -13,13 +13,4 @@ $(function(){
       $("#side_nav").animate({width: '0px'}, '500');
     }
   });
-
-  button.mouseover(function(){
-    $(this).children(buttonSummary).animate({top: '0px', opacity: '1'},'500');
-    $(this).children(quickButtonTitle).css('border-bottom','solid #FFF 1px');
-  });
-  button.mouseleave(function(){
-    $(this).children(buttonSummary).animate({top: '-10px', opacity: '0'},'500');
-    $(this).children(quickButtonTitle).css('border-bottom','none');
-  })
 });
