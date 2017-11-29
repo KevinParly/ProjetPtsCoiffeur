@@ -138,14 +138,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::indexAction',  '_route' => 'stock_default_index',);
         }
 
-        // listproduitmodif
-        if ('/listproduitmodif' === $pathinfo) {
-            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listProduitModif',  '_route' => 'listproduitmodif',);
-        }
+        if (0 === strpos($pathinfo, '/list')) {
+            // listproduitmodif
+            if ('/listproduitmodif' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listProduitModif',  '_route' => 'listproduitmodif',);
+            }
 
-        // listeproduit
-        if ('/listeproduit' === $pathinfo) {
-            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeProduit',  '_route' => 'listeproduit',);
+            // listeproduit
+            if ('/listeproduit' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeProduit',  '_route' => 'listeproduit',);
+            }
+
+            // listecouleur
+            if ('/listecouleur' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeCouleur',  '_route' => 'listecouleur',);
+            }
+
         }
 
         // front_default_index
