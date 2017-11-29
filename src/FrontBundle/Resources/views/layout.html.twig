@@ -12,67 +12,76 @@
     <div id="side_nav_displayer"><button><img src="{{ asset("bundles/front/images/menu.png") }}" title="Menu latéral"/></button></div>
     <nav id="side_nav">
       <ol class="quickMenu firstQuickMenu">
-        <li>
-          <a href="{{ path('ajoutproduit') }}"><img src="{{ asset("bundles/front/images/addProductQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Ajouter un produit</p>
-          <p class="buttonSummary">Ajoutez un produit aux stocks</p>
-        </li>
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/changeProductQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Modifier un produit</p>
-          <p class="buttonSummary">Modifiez un produit parmis ceux présents dans liste</p>
-        </li>
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/displayProductListQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Lister les stocks</p>
-          <p class="buttonSummary">Affichez la liste des produits dans les stocks</p>
-        </li>
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/addDeliveryQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Ajouter une livraison</p>
-          <p class="buttonSummary">Ajoutez une nouvelle livraison</p>
-        </li>
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/displayColorListQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Lister les couleurs / permanentes</p>
-          <p class="buttonSummary">Affichez la liste des couleurs / permanentes dans les stocks</p>
-        </li>
+        <h3>STOCKS</h3>
+        <div>
+          <li>
+            <a href="{{ path('ajoutproduit') }}"><img src="{{ asset("bundles/front/images/addProductQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Ajouter un produit</p>
+            <p class="buttonSummary">Ajoutez un produit aux stocks</p>
+          </li>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/changeProductQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Modifier un produit</p>
+            <p class="buttonSummary">Modifiez un produit parmis ceux présents dans liste</p>
+          </li>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/displayProductListQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Lister les stocks</p>
+            <p class="buttonSummary">Affichez la liste des produits dans les stocks</p>
+          </li>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/addDeliveryQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Ajouter une livraison</p>
+            <p class="buttonSummary">Ajoutez une nouvelle livraison</p>
+          </li>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/displayColorListQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Lister les couleurs / permanentes</p>
+            <p class="buttonSummary">Affichez la liste des couleurs / permanentes dans les stocks</p>
+          </li>
+        </div>
       </ol>
 
       <ol class="quickMenu">
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/addClientQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Ajouter un client</p>
-          <p class="buttonSummary">Ajoutez un nouveau client à la base de données</p>
-        </li>
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/changeClientQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Modifier un client</p>
-          <p class="buttonSummary">Modifiez un client parmis ceux présents dans la base de données</p>
-        </li>
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/displayClientListQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Lister les clients</p>
-          <p class="buttonSummary">Affichez la liste des clients</p>
-        </li>
+        <h3>CLIENTS</h3>
+        <div>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/addClientQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Ajouter un client</p>
+            <p class="buttonSummary">Ajoutez un nouveau client à la base de données</p>
+          </li>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/changeClientQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Modifier un client</p>
+            <p class="buttonSummary">Modifiez un client parmis ceux présents dans la base de données</p>
+          </li>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/displayClientListQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Lister les clients</p>
+            <p class="buttonSummary">Affichez la liste des clients</p>
+          </li>
+        </div>
       </ol>
 
       <ol class="quickMenu lastQuickMenu">
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/addBillQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Créer une facture</p>
-          <p class="buttonSummary">Créez une nouvelle facture</p>
-        </li>
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/displayBillListQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Lister les factures</p>
-          <p class="buttonSummary">Affichez les factures créées</p>
-        </li>
-        <li>
-          <a href=""><img src="{{ asset("bundles/front/images/printBillQuickButton.png") }}"/></a>
-          <p class="quickButtonTitle">Imprimer une facture</p>
-          <p class="buttonSummary">Imprimez une nouvelle facture ou une parmis la liste</p>
-        </li>
+        <h3>FACTURES</h3>
+        <div>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/addBillQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Créer une facture</p>
+            <p class="buttonSummary">Créez une nouvelle facture</p>
+          </li>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/displayBillListQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Lister les factures</p>
+            <p class="buttonSummary">Affichez les factures créées</p>
+          </li>
+          <li>
+            <a href=""><img src="{{ asset("bundles/front/images/printBillQuickButton.png") }}"/></a>
+            <p class="quickButtonTitle">Imprimer une facture</p>
+            <p class="buttonSummary">Imprimez une nouvelle facture ou une parmis la liste</p>
+          </li>
+        </div>
       </ol>
     </nav>
     {% block body %}{% endblock %}

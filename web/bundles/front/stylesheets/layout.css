@@ -33,19 +33,28 @@ body{
 #side_nav{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 0px;
   height: 100%;
-  min-height: 780px;
+  min-height: 770;
   overflow: hidden;
   background-color: rgba(0,0,0,0.8);
 }
 
 .quickMenu{
+  text-align: center;
+}
+
+.quickMenu h3{
+  color: #FFF;
+  font-size: 28px;
+}
+
+.quickMenu div{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -55,7 +64,7 @@ body{
   max-width: 780px;
   min-width: 550px;
   list-style: none;
-}
+} 
 
 .quickMenu li{
   width: 100px;
@@ -80,6 +89,7 @@ body{
   color: rgb(197, 200, 204);
   font-size: 12px;
   text-align: center;
+  background-color: rgb(0,0,0);
   opacity: 0;
 }
 
@@ -98,9 +108,9 @@ body{
 }
 
 .lastQuickMenu{
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 .firstQuickMenu{
-  margin-top: 150px;
+  margin-top: 0px;
 }
