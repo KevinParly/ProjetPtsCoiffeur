@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta charset="UTF-8" />
-      <title>TITRE</title>
+      {% block title %}{% endblock %}
       <link rel="stylesheet" type="text/css" href="{{ asset("bundles/front/stylesheets/layout.css") }}"/>
       {% block stylesheets %}{% endblock %}
       <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
