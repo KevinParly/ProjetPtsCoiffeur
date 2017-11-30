@@ -10,6 +10,8 @@
 body{
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 #side_nav_displayer button{
@@ -40,7 +42,7 @@ body{
   left: 0;
   width: 0px;
   height: 100%;
-  /*min-height: 770px;*/
+  min-height: 660px;
   overflow: hidden;
   background-color: rgba(0,0,0,0.8);
 }
@@ -64,7 +66,7 @@ body{
   max-width: 780px;
   min-width: 550px;
   list-style: none;
-} 
+}
 
 .quickMenu li{
   width: 100px;
