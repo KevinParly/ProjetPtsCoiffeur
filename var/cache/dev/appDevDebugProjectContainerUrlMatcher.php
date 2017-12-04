@@ -103,25 +103,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // client_default_index
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'client_default_index');
-            }
-
-            return array (  '_controller' => 'ClientBundle\\Controller\\DefaultController::indexAction',  '_route' => 'client_default_index',);
-        }
-
-        if (0 === strpos($pathinfo, '/a')) {
+        elseif (0 === strpos($pathinfo, '/a')) {
             if (0 === strpos($pathinfo, '/accueil')) {
-                // accueilclient
-                if ('/accueilclient' === $pathinfo) {
-                    return array (  '_controller' => 'ClientBundle\\Controller\\DefaultController::accueilClient',  '_route' => 'accueilclient',);
-                }
-
                 // accueilstock
                 if ('/accueilstock' === $pathinfo) {
                     return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::acceuilStockAction',  '_route' => 'accueilstock',);
+                }
+
+                // accueilclient
+                if ('/accueilclient' === $pathinfo) {
+                    return array (  '_controller' => 'ClientBundle\\Controller\\DefaultController::accueilClient',  '_route' => 'accueilclient',);
                 }
 
                 // accueil
@@ -143,22 +134,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/liste')) {
-            // listeclient
-            if ('/listeclient' === $pathinfo) {
-                return array (  '_controller' => 'ClientBundle\\Controller\\ListeClientController::listeClientAction',  '_route' => 'listeclient',);
+        // stock_default_basique
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'stock_default_basique');
             }
 
-            // listecouleur
-            if ('/listecouleur' === $pathinfo) {
-                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeCouleur',  '_route' => 'listecouleur',);
-            }
-
-            // listeproduit
-            if ('/listeproduit' === $pathinfo) {
-                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeProduit',  '_route' => 'listeproduit',);
-            }
-
+            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::basiqueAction',  '_route' => 'stock_default_basique',);
         }
 
         // listproduitmodif
@@ -166,13 +148,31 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listProduitModif',  '_route' => 'listproduitmodif',);
         }
 
-        // stock_default_index
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'stock_default_index');
+        if (0 === strpos($pathinfo, '/liste')) {
+            // listeproduit
+            if ('/listeproduit' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeProduit',  '_route' => 'listeproduit',);
             }
 
-            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::indexAction',  '_route' => 'stock_default_index',);
+            // listecouleur
+            if ('/listecouleur' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeCouleur',  '_route' => 'listecouleur',);
+            }
+
+            // listeclient
+            if ('/listeclient' === $pathinfo) {
+                return array (  '_controller' => 'ClientBundle\\Controller\\ListeClientController::listeClientAction',  '_route' => 'listeclient',);
+            }
+
+        }
+
+        // client_default_base
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'client_default_base');
+            }
+
+            return array (  '_controller' => 'ClientBundle\\Controller\\DefaultController::baseAction',  '_route' => 'client_default_base',);
         }
 
         // front_default_index

@@ -17,7 +17,7 @@ class DefaultController extends Controller
     /**
      * @Route("/")
      */
-    public function indexAction()
+    public function basiqueAction()
     {
         return $this->redirectToRoute("accueil");
     }

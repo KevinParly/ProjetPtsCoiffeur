@@ -1,10 +1,10 @@
-client:
-    resource: "@ClientBundle/Controller/"
+stock:
+    resource: "@StockBundle/Controller/"
     type:     annotation
     prefix:   /
 
-stock:
-    resource: "@StockBundle/Controller/"
+client:
+    resource: "@ClientBundle/Controller/"
     type:     annotation
     prefix:   /
 
