@@ -8,10 +8,12 @@
   <img src="{{ asset("bundles/front/images/logo1.png") }}"/>
   <h1>Bienvenue sur l'accueil de l'application</h1>
   <div id="menu">
-    <a href={{ path('accueilstock') }}>
+    <a href={{ path('accueilclient') }}>
+        <button type="button">Clients</button>
+    </a>
+    <button type="button">Factures</button>
+    <a>
         <button type="button">Stocks</button>
     </a>
-    <button type="button">Clients</button>
-    <button type="button">Factures</button>
   </div>
 {% endblock %}

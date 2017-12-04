@@ -1,0 +1,13 @@
+{% block title %}<title>Accueil gestion clients</title>{% endblock %}
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{{ asset("bundles/front/stylesheets/accueil.css") }}"/>
+{% endblock %}
+{% block body %}
+  <h1>Rechercher un client</h1>
+  <form>
+      <input type="text" placeholder="Nom ou prenom du client recherché">
+      <input type="checkbox" name="genre"><label>Homme</label>
+      <input type="checkbox" name="genre"><label>Femme</label>
+      <input type="checkbox" name="genre"><label>Enfant</label>
+  </form>
+{% endblock %}

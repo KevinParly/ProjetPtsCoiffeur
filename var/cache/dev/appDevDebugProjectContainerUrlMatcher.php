@@ -103,8 +103,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/a')) {
+        // client_default_index
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'client_default_index');
+            }
+
+            return array (  '_controller' => 'ClientBundle\\Controller\\DefaultController::indexAction',  '_route' => 'client_default_index',);
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
             if (0 === strpos($pathinfo, '/accueil')) {
+                // accueilclient
+                if ('/accueilclient' === $pathinfo) {
+                    return array (  '_controller' => 'ClientBundle\\Controller\\DefaultController::accueilClient',  '_route' => 'accueilclient',);
+                }
+
                 // accueilstock
                 if ('/accueilstock' === $pathinfo) {
                     return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::acceuilStockAction',  '_route' => 'accueilstock',);
@@ -129,24 +143,10 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // stock_default_index
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'stock_default_index');
-            }
-
-            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::indexAction',  '_route' => 'stock_default_index',);
-        }
-
-        if (0 === strpos($pathinfo, '/list')) {
-            // listproduitmodif
-            if ('/listproduitmodif' === $pathinfo) {
-                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listProduitModif',  '_route' => 'listproduitmodif',);
-            }
-
-            // listeproduit
-            if ('/listeproduit' === $pathinfo) {
-                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeProduit',  '_route' => 'listeproduit',);
+        elseif (0 === strpos($pathinfo, '/liste')) {
+            // listeclient
+            if ('/listeclient' === $pathinfo) {
+                return array (  '_controller' => 'ClientBundle\\Controller\\ListeClientController::listeClientAction',  '_route' => 'listeclient',);
             }
 
             // listecouleur
@@ -154,6 +154,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeCouleur',  '_route' => 'listecouleur',);
             }
 
+            // listeproduit
+            if ('/listeproduit' === $pathinfo) {
+                return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listeProduit',  '_route' => 'listeproduit',);
+            }
+
+        }
+
+        // listproduitmodif
+        if ('/listproduitmodif' === $pathinfo) {
+            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::listProduitModif',  '_route' => 'listproduitmodif',);
+        }
+
+        // stock_default_index
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'stock_default_index');
+            }
+
+            return array (  '_controller' => 'StockBundle\\Controller\\DefaultController::indexAction',  '_route' => 'stock_default_index',);
         }
 
         // front_default_index

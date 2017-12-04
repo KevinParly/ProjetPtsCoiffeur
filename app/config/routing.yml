@@ -1,3 +1,8 @@
+client:
+    resource: "@ClientBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 stock:
     resource: "@StockBundle/Controller/"
     type:     annotation
