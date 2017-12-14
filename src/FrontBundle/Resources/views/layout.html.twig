@@ -3,12 +3,17 @@
   <head>
       <meta charset="UTF-8" />
       {% block title %}{% endblock %}
-      <link rel="stylesheet" type="text/css" href="{{ asset("bundles/front/stylesheets/layout.css") }}"/>
-      {% block stylesheets %}{% endblock %}
-      <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+      <link href="{{ asset('assets/css/accueil.css') }}" rel="stylesheet" />
+
+      {% block stylesheets %}
+
+      {% endblock %}
   </head>
+
   <body>
     {% block body %}{% endblock %}
     {% block javascripts %}{% endblock %}
   </body>
+
 </html>
