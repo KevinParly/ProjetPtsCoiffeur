@@ -11,13 +11,12 @@
     <header><h1>Bienvenue sur l'accueil de l'application</h1></header>
     <body class="accueil">
       <div class="menu">
-        <a href={{ path('accueilclient') }}>
-          <button type="button">Clients</button>
-        </a>
-          <button type="button">Factures</button>
-        <a href={{ path('accueilstock') }}>
-          <button type="button">Stocks</button>
-        </a>
+          <a class="boutonAccueil" href={{ path('accueilclient') }}>
+            <p>CLIENTS</p>
+          </a>
+          <a class="boutonRDV" href={{ path('accueilclient') }}>
+              <p>RENDEZ-VOUS</p>
+          </a>
       </div>
     </body>
 {% endblock %}
