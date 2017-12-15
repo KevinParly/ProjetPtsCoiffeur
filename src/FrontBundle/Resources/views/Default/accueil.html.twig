@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block stylesheets %}
+    <link href="{{ asset('assets/css/accueil.css') }}" rel="stylesheet" />
 {% endblock %}
 {% block body %}
     <header><h1>Bienvenue sur l'accueil de l'application</h1></header>
     <body class="accueil">
-
       <div class="menu">
         <a href={{ path('accueilclient') }}>
           <button type="button">Clients</button>

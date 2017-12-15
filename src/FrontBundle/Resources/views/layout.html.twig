@@ -4,7 +4,7 @@
       <meta charset="UTF-8" />
       {% block title %}{% endblock %}
 
-      <link href="{{ asset('assets/css/accueil.css') }}" rel="stylesheet" />
+      <link href="{{ asset('assets/css/layout.css') }}" rel="stylesheet" />
 
       {% block stylesheets %}
 
@@ -12,6 +12,14 @@
   </head>
 
   <body>
+      <nav id="main_nav">
+          <p>RecycloPedia</p>
+          <ul>
+              <li><a href="/accueil">Accueil</a></li>
+              <li><a href="">Clients</a></li>
+              <li><a href="">Facture</a></li>
+          </ul>
+      </nav>
     {% block body %}{% endblock %}
     {% block javascripts %}{% endblock %}
   </body>
