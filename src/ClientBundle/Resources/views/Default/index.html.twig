@@ -1,13 +1,5 @@
 {% block title %}<title>Accueil gestion clients</title>{% endblock %}
 {% block stylesheets %}
-  <link rel="stylesheet" type="text/css" href="{{ asset("bundles/front/stylesheets/accueil.css") }}"/>
 {% endblock %}
 {% block body %}
-  <h1>Accueil de la gestion des clients</h1>
-  <div id="menu">
-    <a href={{ path('listeclient') }}> 
-        <button type="button">Lister les clients</button>
-    </a>
-    <button type="button">Prendre un rendez-vous</button>
-  </div>
 {% endblock %}

@@ -24,7 +24,7 @@ header {
     text-align: center;
 }
 
-a {
+#btn {
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -51,7 +51,7 @@ p {
 }
 
 .boutonAccueil {
-    background-image: url(/ProjetPtsCoiffeur/web/assets/images/clients-logo.png);
+    background-image: url(../images/clients-logo.png);
     background-repeat:no-repeat;
     background-position-x: 5px;
     background-position-y: 10px;
@@ -59,7 +59,7 @@ p {
 }
 
 .boutonRDV {
-    background-image: url(/ProjetPtsCoiffeur/web/assets/images/rdv-logo.png);
+    background-image: url(../images/rdv-logo.png);
     background-repeat:no-repeat;
     background-position-x: 22px;
     background-position-y: 10px;
