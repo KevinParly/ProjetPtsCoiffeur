@@ -12,6 +12,8 @@ class ListeClientController extends Controller
      */
     public function listeClientAction()
     {
-        return $this->render('ClientBundle:Default:listeClient.html.twig');
+      $em = $this->getDoctrine()->getManager();
+      $clients = $em->getRepository('ClientBundle:Client')->findAll();
+        return $this->render('ClientBundle:Default:listeClient.html.twig',array('clients'=>$clients));
     }
 }

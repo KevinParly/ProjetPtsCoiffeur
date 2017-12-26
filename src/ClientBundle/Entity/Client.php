@@ -24,6 +24,20 @@ class Client
     /**
      * @var string
      *
+     * @ORM\Column(name="civilite", type="string", length=255)
+     */
+     private $civilite;
+
+     /**
+      * @var date
+      *
+      * @ORM\Column(name="dateNaissance", type="date")
+      */
+      private $dateNaissance;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="nom", type="string", length=255)
      */
     private $nom;
@@ -103,6 +117,30 @@ class Client
     }
 
     /**
+     * Get dateNaissance
+     *
+     * @return date
+     */
+    public function getDateNaissance()
+    {
+        return $this->dateNaissance;
+    }
+
+    /**
+     * Set dateNaissance
+     *
+     * @param date $dateNaissance
+     *
+     * @return Client
+     */
+    public function setDateNaissance($dateNaissance)
+    {
+        $this->dateNaissance = $dateNaissance;
+
+        return $this;
+    }
+
+    /**
      * Get nom
      *
      * @return string
@@ -110,6 +148,30 @@ class Client
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set civilite
+     *
+     * @param string $civilite
+     *
+     * @return Client
+     */
+    public function setCivilite($civilite)
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+    }
+
+    /**
+     * Get civilite
+     *
+     * @return string
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
     }
 
     /**
@@ -280,4 +342,3 @@ class Client
         return $this->couleur;
     }
 }
-

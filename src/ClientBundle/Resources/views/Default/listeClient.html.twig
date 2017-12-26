@@ -1,6 +1,6 @@
+{% extends "FrontBundle::layout.html.twig" %}
 {% block title %}<title>Accueil gestion clients</title>{% endblock %}
 {% block stylesheets %}
-  <link rel="stylesheet" type="text/css" href="{{ asset("bundles/front/stylesheets/accueil.css") }}"/>
 {% endblock %}
 {% block body %}
   <h1>Rechercher un client</h1>
@@ -9,5 +9,42 @@
       <input type="checkbox" name="genre"><label>Homme</label>
       <input type="checkbox" name="genre"><label>Femme</label>
       <input type="checkbox" name="genre"><label>Enfant</label>
+      <label>Mois de naissance</label>
+      <select>
+        <option selected>Tous</option>
+        <option value="mois">Janvier</option>
+        <option value="mois">Février</option>
+        <option value="mois">Mars</option>
+        <option value="mois">Avril</option>
+        <option value="mois">Mai</option>
+        <option value="mois">Juin</option>
+        <option value="mois">Juillet</option>
+        <option value="mois">Aout</option>
+        <option value="mois">Septembre</option>
+        <option value="mois">Octobre</option>
+        <option value="mois">Novembre</option>
+        <option value="mois">Decembre</option>
+      </select>
   </form>
+  <h1>La liste des clients</h1>
+  <table>
+    <tr>
+      <td>Civilité</td>
+      <td>Nom</td>
+      <td>Prénom</td>
+      <td>Date de naissance</td>
+      <td><td>
+    </tr>
+  {% for client in clients %}
+    <tr>
+      <td>{{ client.civilite }}</td>
+      <td>{{ client.nom }}</td>
+      <td>{{ client.prenom }}</td>
+      <td>{{ client.dateNaissance|date("d/m/Y") }}</td>
+      <td><a href="detailsclient/{{client.id}}"><button>Détails</button></a><td>
+    </tr>
+  {% endfor %}
+  </table>
+  <a><button>Retour</button></a>
+  <a><button>Nouveau client</button></a>
 {% endblock %}
