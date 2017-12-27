@@ -35,6 +35,11 @@ class Soin
      */
     private $details;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\TypeSoin")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $type;
 
     /**
      * Get id
@@ -56,6 +61,30 @@ class Soin
     public function setNom($nom)
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \ClientBundle\Entity\TypeSoin
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param \ClientBundle\Entity\TypeSoin $type
+     *
+     * @return Soin
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
 
         return $this;
     }

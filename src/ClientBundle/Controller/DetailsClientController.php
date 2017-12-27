@@ -21,7 +21,13 @@ class DetailsClientController extends Controller
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('ClientBundle:Client')->find($id);
         $rdvsClient = $em->getRepository('ClientBundle:Rendezvous')->findBy(array('client'=>$client));
-        return $this->render('ClientBundle:Default:detailsClient.html.twig', array("client"=>$client,"rdvs"=>$rdvsClient));
+        $typeSoins = $em->getRepository('ClientBundle:TypeSoin')->findAll();
+        $soinsRdv = array();
+        foreach($rdvsClient as $element)
+        {
+            array_push($soinsRdv, $element->getSoins());
+        }
+        return $this->render('ClientBundle:Default:detailsClient.html.twig', array("client"=>$client,"rdvs"=>$rdvsClient,"typeSoins"=>$typeSoins,"soins"=>$soinsRdv));
     }
 
 }

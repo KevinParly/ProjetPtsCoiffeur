@@ -48,6 +48,7 @@
             {% endif %}
         </form>
     </div>
+
     <div id="HistoRDV" class="tabcontent">
         <label>Rechercher un rendez-vous</label><input type="search" placeholder="Date du rendez-vous">
         <h1>Liste des rendez-vous</h1>
@@ -70,7 +71,16 @@
     </div>
 
     <div id="SoinsRecus" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
+        <label>Rechercher un type de soins</label>
+        <select>
+            <option selected>Tous</option>
+            {% for typeSoin in typeSoins %}
+                <option>{{ typeSoin.libelle }}</option>
+            {% endfor %}
+        </select><br>
+        <label>Dernière couleur effectuer le </label><button>Détails mélange</button>
+        {% for soin in soins %}
+            {{ soin }}
+        {% endfor %}
     </div>
 {% endblock %}
