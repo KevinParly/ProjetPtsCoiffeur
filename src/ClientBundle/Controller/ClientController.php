@@ -40,7 +40,10 @@ class ClientController extends Controller
             ->add('dateNaissance',BirthdayType::class)
             ->add('telephone',TextType::class)
             ->add('remise',NumberType::class)
-            ->add('couleur',CheckboxType::class)
+            ->add('couleur',ChoiceType::class,array(
+                'choices'=>array('Oui'=>'1','Non'=>'0'),
+                'expanded'=>true
+            ))
             ->add('Enregistrer', SubmitType::class)
             ->getForm()
         ;
@@ -50,6 +53,10 @@ class ClientController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($clientInsert);
             $em->flush();
+            $this->addFlash("success", "Vous avez bien inséré le client " . $clientInsert->getNom().' '. $clientInsert->getPrenom());
+        }
+        else{
+            $this->addFlash("kyusoledozo", "Erreur : client non inserer");
         }
         return $this->render('ClientBundle:Default:ajoutClient.html.twig', array('form'=>$form->createView()));
     }

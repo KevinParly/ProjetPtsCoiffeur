@@ -1,0 +1,4 @@
+services:
+#    rendezvous.example:
+#        class: RendezvousBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -4,6 +4,11 @@
 {% endblock %}
 {% block body %}
     <h1>Ajouter un nouveau client</h1>
+    {% for message in app.flashes('success') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}

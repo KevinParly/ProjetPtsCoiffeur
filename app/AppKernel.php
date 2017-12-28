@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new FrontBundle\FrontBundle(),
             new StockBundle\StockBundle(),
             new ClientBundle\ClientBundle(),
+            new RendezvousBundle\RendezvousBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
