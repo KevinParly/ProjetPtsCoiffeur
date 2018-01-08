@@ -10,4 +10,13 @@ namespace ClientBundle\Repository;
  */
 class ClientRepository extends \Doctrine\ORM\EntityRepository
 {
+        public function rechercherClients($nom){
+        return $this->createQueryBuilder('m')
+                    ->select('*')
+                    ->where('m.nom = ?1')
+                    ->setParameter(1,$nom)
+                    ->getQuery()
+                    ->getResult()
+            ;
+    }
 }
