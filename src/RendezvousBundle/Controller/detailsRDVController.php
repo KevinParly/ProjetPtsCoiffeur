@@ -32,7 +32,7 @@ class detailsRDVController extends Controller
         $rdv = new Rendezvous();
         $annee = date("Y");
         $anneeSuivantes = $annee + 10;
-        $form = $this->createFormBuilder($rdv)
+        $form = $this->createFormBuilder(null)
             ->add('client', EntityType::class, array(
                 'class' => 'ClientBundle:Client',
                 'required'=>true,
@@ -43,13 +43,20 @@ class detailsRDVController extends Controller
             ->add('heure',TimeType::class,
                 array('label'=>'Heure du rendez-vous :','with_seconds'=>false,
                     'widget'=>'single_text'))
-            ->add('soins',EntityType::class,array('class'=>'ClientBundle:Soin','choice_label'=>'nom'))
+            ->add('soins',EntityType::class,array('class'=>'ClientBundle:Soin','choice_label'=>'nom','multiple'=>true,'expanded'=>true) )
             ->add('save',SubmitType ::class,array('label'=>'Prendre le rendez-vous'))
             ->getForm()
             ->handleRequest($request)
             ;
         if($form->isSubmitted() && $form->isValid()){
-            $rdv->addSoin($form->getData()['soins']);
+            $rdv->setClient($form->get('client')->getData());
+            $rdv->setDate($form->get('date')->getData());
+            $rdv->setHeure($form->get('heure')->getData());
+            $rdv->setPrix(1);
+            $soins = $form->get('soins')->getData();
+            foreach ($soins as $soin){
+                $rdv->addSoin($soin);
+            }
             $em->persist($rdv);
             $em->flush();
         }
