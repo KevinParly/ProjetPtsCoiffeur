@@ -341,4 +341,8 @@ class Client
     {
         return $this->couleur;
     }
+
+    function __toString() {
+        return $this->nom . ' ' . $this->prenom;
+    }
 }
