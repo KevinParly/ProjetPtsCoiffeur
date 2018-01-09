@@ -3,29 +3,10 @@
 {% block stylesheets %}
 {% endblock %}
 {% block body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
   <h1>Rechercher un client</h1>
-  <form>
-      <input type="search" placeholder="Nom ou prenom du client recherché">
-      <input type="checkbox" name="genre"><label>Homme</label>
-      <input type="checkbox" name="genre"><label>Femme</label>
-      <input type="checkbox" name="genre"><label>Enfant</label>
-      <label>Mois de naissance</label>
-      <select>
-        <option selected>Tous</option>
-        <option value="mois">Janvier</option>
-        <option value="mois">Février</option>
-        <option value="mois">Mars</option>
-        <option value="mois">Avril</option>
-        <option value="mois">Mai</option>
-        <option value="mois">Juin</option>
-        <option value="mois">Juillet</option>
-        <option value="mois">Aout</option>
-        <option value="mois">Septembre</option>
-        <option value="mois">Octobre</option>
-        <option value="mois">Novembre</option>
-        <option value="mois">Decembre</option>
-      </select>
-  </form>
   <h1>La liste des clients</h1>
   <table>
     <tr>
