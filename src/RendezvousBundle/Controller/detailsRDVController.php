@@ -29,6 +29,7 @@ class detailsRDVController extends Controller
     public function RDVAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        //Pane Creation de rendez-vous
         $rdv = new Rendezvous();
         $annee = date("Y");
         $anneeSuivantes = $annee + 10;
@@ -60,6 +61,27 @@ class detailsRDVController extends Controller
             $em->persist($rdv);
             $em->flush();
         }
-        return $this->render('RendezvousBundle:Default:index.html.twig',array('form'=>$form->createView()));
+
+        //Pane Liste RDV non effectuer
+        $date = date('Y-m-d');
+        $heure = date('H:i:s');
+        $heurePrecedante = date('H:i:s',strtotime($heure." - 1 hours"));
+        $rdvs = $em->getRepository('ClientBundle:Rendezvous')->rechercheRdvNonEffectuer($date,$heurePrecedante);
+
+
+
+
+
+
+
+
+
+
+
+        return $this->render('RendezvousBundle:Default:index.html.twig',array(
+            'form'=>$form->createView(),
+            'date'=>$date,
+            'heure'=>$heurePrecedante,
+            'rdvs'=>$rdvs));
     }
 }
