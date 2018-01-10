@@ -16,15 +16,25 @@
 
     <div id="NouveauRDV" class="tabcontent">
         {{ form_start(form) }}
+        {{ form_row(form.client) }}<a href={{ path('ajoutclient') }}><button>Nouveau client</button></a>
         {{ form_widget(form) }}
         {{ form_end(form) }}
-        {{ date }}
-        {{ heure }}
     </div>
 
     <div id="HistoRDV" class="tabcontent">
-        {% for rdv in rdvs %}
-            {{ rdv.nom }}
-        {% endfor %}
+        <table>
+            <tr>
+                <th>Date du rendez-vous</th>
+                <th>Heure du rendez-vous</th>
+                <th>Client</th>
+                <th></th>
+            </tr>
+            {% for rdv in rdvs %}
+                <td>{{ rdv.date|date("d/m/Y") }}</td>
+                <td>{{ rdv.heure|date('h:m') }}</td>
+                <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                <td><a><button>Détails</button></a></td>
+            {% endfor %}
+        </table>
     </div>
 {% endblock %}

@@ -21,7 +21,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\HttpFoundation\Request;
 
-class detailsRDVController extends Controller
+class RDVController extends Controller
 {
     /**
      * @Route("/rendezvous",name="rendezvous")
@@ -68,15 +68,10 @@ class detailsRDVController extends Controller
         $heurePrecedante = date('H:i:s',strtotime($heure." - 1 hours"));
         $rdvs = $em->getRepository('ClientBundle:Rendezvous')->rechercheRdvNonEffectuer($date,$heurePrecedante);
 
-
-
-
-
-
-
-
-
-
+        $formRecherche = $this->createFormBuilder(null)
+            ->add('date',DateType::class,array('format'=>'ddMMyyyy'))
+            ->add('heure')
+        ;
 
         return $this->render('RendezvousBundle:Default:index.html.twig',array(
             'form'=>$form->createView(),

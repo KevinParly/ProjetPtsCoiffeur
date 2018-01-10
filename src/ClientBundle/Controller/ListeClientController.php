@@ -4,12 +4,11 @@ namespace ClientBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-<<<<<<< HEAD
+
 use ClientBundle\Entity\Client;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-=======
->>>>>>> 62863304acc553f50c367f4d5340ad889f1ea3ef
+
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,7 +20,6 @@ class ListeClientController extends Controller
      */
     public function listeClientAction(Request $request)
     {
-<<<<<<< HEAD
         $em = $this->getDoctrine()->getManager();
         $client = new Client();
         $form = $this->createFormBuilder($client)
@@ -56,7 +54,6 @@ class ListeClientController extends Controller
             'clients'=>$clients,
             'form'=>$form->createView()
         ));
-=======
       $em = $this->getDoctrine()->getManager();
       $clients = $em->getRepository('ClientBundle:Client')->findAll();
       $form= $this->createFormBuilder(null)
@@ -71,7 +68,6 @@ class ListeClientController extends Controller
           }
       }
       return $this->render('ClientBundle:Default:listeClient.html.twig',array('clients'=>$clients,'form'=>$form->createView()));
->>>>>>> 62863304acc553f50c367f4d5340ad889f1ea3ef
     }
 }
 
