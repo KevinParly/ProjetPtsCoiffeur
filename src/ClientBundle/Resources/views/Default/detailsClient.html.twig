@@ -22,8 +22,9 @@
     </div>
 
     <div id="HistoRDV" class="tabcontent">
-        <label>Rechercher un rendez-vous</label><input type="search" placeholder="Date du rendez-vous">
-        <h1>Liste des rendez-vous</h1>
+        {{ form_start(formRDV) }}
+        {{ form_widget(formRDV) }}
+        {{ form_end(formRDV) }}
         <table>
             <tr>
                 <td>Date du rendez-vous</td>

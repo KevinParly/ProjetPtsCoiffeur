@@ -8,13 +8,16 @@
 
 namespace ClientBundle\Controller;
 
+use ClientBundle\Entity\Rendezvous;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Time;
 
 
 class DetailsClientController extends Controller
@@ -25,6 +28,7 @@ class DetailsClientController extends Controller
      */
     public function detailsClientAction($id, Request $request){
         $em = $this->getDoctrine()->getManager();
+        //Form Information Client
         $client = $em->getRepository('ClientBundle:Client')->find($id);
         $form = $this->createFormBuilder($client)
             ->add('civilite',ChoiceType::class,array('label'=>'Civilité : ','choices'=>array('M'=>'M','Mme'=>'Mme','Enfant'=>'Enfant')))
@@ -48,10 +52,39 @@ class DetailsClientController extends Controller
         else{
             $message = "Echec lors de la modification du client";
         }
+
+        //Form Historique RDV
         $rdvsClient = $em->getRepository('ClientBundle:Rendezvous')->findBy(array('client'=>$client));
+        $rdv = new Rendezvous();
+        $formRDV = $this->createFormBuilder($rdv)
+            ->add('date',DateType::class,array('label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false ))
+            ->add('heure',TimeType::class,array('label'=>'Heure du rendez-vous','placeholder' => array('hour' => 'Heure', 'minute' => 'Minute'),'required'=>false))
+            ->add('Valider',SubmitType::class)
+            ->getForm()
+            ->handleRequest($request)
+        ;
+
+        if($formRDV->isSubmitted() && $formRDV->isValid()) {
+            if ($formRDV->get('date')->getData() != null) {
+                if ($formRDV->get('heure')->getData() != null) {
+                    $rdvsClient = $em->getRepository('ClientBundle:Rendezvous')
+                        ->findBy(array('client' => $client, 'date' => $formRDV->get('date')->getData(), 'heure' => $formRDV->get('heure')->getData()));
+                } else {
+                    $rdvsClient = $em->getRepository('ClientBundle:Rendezvous')
+                        ->findBy(array('client' => $client, 'date' => $formRDV->get('date')->getData()));
+                }
+            } else {
+                if ($formRDV->get('heure')->getData() != null) {
+                    $rdvsClient = $em->getRepository('ClientBundle:Rendezvous')
+                        ->findBy(array('client' => $client, 'heure' => $formRDV->get('heure')->getData()));
+                }else{
+                    $rdvsClient = $em->getRepository('ClientBundle:Rendezvous')->findBy(array('client'=>$client));
+                }
+            }
+        }
+
         $typeSoins = $em->getRepository('ClientBundle:TypeSoin')->findAll();
         return $this->render('ClientBundle:Default:detailsClient.html.twig',
-            array("client"=>$client,"rdvs"=>$rdvsClient,"typeSoins"=>$typeSoins,"message"=>$message,'form'=>$form->createView()));
+            array("client"=>$client,"rdvs"=>$rdvsClient,"typeSoins"=>$typeSoins,"message"=>$message,'form'=>$form->createView(),'formRDV'=>$formRDV->createView()));
     }
-
 }
