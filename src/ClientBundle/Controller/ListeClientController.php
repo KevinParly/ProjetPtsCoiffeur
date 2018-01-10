@@ -26,9 +26,9 @@ class ListeClientController extends Controller
         $form = $this->createFormBuilder($client)
             ->add('civilite', ChoiceType::class, array(
                 'label' => 'Civilité : ','choices'=>array(
-                    'Monsieur'=>'monsieur',
-                    'Madame'=>'madame',
-                    'Enfant'=>'enfant'),
+                    'Monsieur'=>'M',
+                    'Madame'=>'Mme',
+                    'Enfant'=>'Enfant'),
                 'expanded' => true,
                 'required' => false
             ))
