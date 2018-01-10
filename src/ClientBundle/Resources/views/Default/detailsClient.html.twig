@@ -16,37 +16,9 @@
     </div>
 
     <div id="InfoClient" class="tabcontent">
-        <form>
-            <label>Civilite</label>
-            <select>
-                {% if client.civilite == "M" %}
-                    <option selected>{{ client.civilite }}</option>
-                    <option>Mme</option>
-                    <option>Enfant</option>
-                {% elseif client.civilite == "Mme" %}
-                    <option selected>{{ client.civilite }}</option>
-                    <option>M</option>
-                    <option>Enfant</option>
-                {% elseif client.civilite =="Enfant" %}
-                    <option selected>{{ client.civilite }}</option>
-                    <option>Mme</option>
-                    <option>M</option>
-                {% endif %}
-            </select><br>
-            <label>Nom</label><input type="text" value={{ client.nom }}> <label>Prenom</label><input type="text" value={{ client.prenom }}><br>
-            <label>Date de naissance</label><input type="text" value={{ client.dateNaissance|date("d/m/Y") }}><br>
-            <label>Téléphone</label><input type="tel" value={{ client.telephone }}><br>
-            <label>Adresse</label><input type="text" value={{ client.adresse }}><br>
-            <label>Ville</label><input type="text" value={{ client.ville }}><br>
-            <label>Code postal</label><input type="text" value={{ client.CodePostal }}><br>
-            <label>Remise</label><input type="text" value="{{ client.remise }}%"><br>
-            <label>Couleur / Permanante</label>
-            {% if client.couleur == 0 %}
-                <input type="checkbox">
-            {% else %}
-                <input type="checkbox" checked>
-            {% endif %}
-        </form>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
     </div>
 
     <div id="HistoRDV" class="tabcontent">
