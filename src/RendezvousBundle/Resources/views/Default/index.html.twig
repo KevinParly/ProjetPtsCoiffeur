@@ -18,9 +18,13 @@
         {{ form_start(form) }}
         {{ form_widget(form) }}
         {{ form_end(form) }}
+        {{ date }}
+        {{ heure }}
     </div>
 
     <div id="HistoRDV" class="tabcontent">
-
+        {% for rdv in rdvs %}
+            {{ rdv.nom }}
+        {% endfor %}
     </div>
 {% endblock %}
