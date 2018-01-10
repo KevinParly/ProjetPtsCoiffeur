@@ -14,6 +14,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -66,17 +67,30 @@ class RDVController extends Controller
         $date = date('Y-m-d');
         $heure = date('H:i:s');
         $heurePrecedante = date('H:i:s',strtotime($heure." - 1 hours"));
-        $rdvs = $em->getRepository('ClientBundle:Rendezvous')->rechercheRdvNonEffectuer($date,$heurePrecedante);
-
+        $rdvsDuJours = $em->getRepository('ClientBundle:Rendezvous')->rechercherRdvNonEffectuerDateJour($date,$heurePrecedante);
+        $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->rechercheRdvNonEffectuerPasDateJour($date);
         $formRecherche = $this->createFormBuilder(null)
-            ->add('date',DateType::class,array('format'=>'ddMMyyyy'))
-            ->add('heure')
+            ->add('datejour',CheckboxType::class,array('label'=>'Date du jour ', 'value'=>$date, 'required'=>false))
+            ->add('date',DateType::class,array('format'=>'ddMMyyyy','label'=>'Date recherché','required'=>false,
+                'placeholder' => array(
+                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour')))
+            ->add('heure',TimeType::class,array('label'=>'Heure recherché','required'=>false,'with_seconds'=>false,
+                'widget'=>'text'))
+            ->add('submit',SubmitType::class,array('label'=>'Rechercher'))
+            ->getForm()
+            ->handleRequest($request)
         ;
+        if($formRecherche->isSubmitted() && $formRecherche->isValid() ){
+
+        }
+
 
         return $this->render('RendezvousBundle:Default:index.html.twig',array(
             'form'=>$form->createView(),
-            'date'=>$date,
+            'formRecherche'=>$formRecherche->createView(),
             'heure'=>$heurePrecedante,
-            'rdvs'=>$rdvs));
+            'rdvsDuJours'=>$rdvsDuJours,
+            'rdvsNonJour'=>$rdvsNonJour,
+            'date'=>$date));
     }
 }
