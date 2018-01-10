@@ -21,7 +21,7 @@ class DetailsClientController extends Controller
 {
 
     /**
-     * @Route("/detailsclient/{id}",name="detailsclient")
+     * @Route("/detailsclient/{id}",name="details_client")
      */
     public function detailsClientAction($id, Request $request){
         $em = $this->getDoctrine()->getManager();

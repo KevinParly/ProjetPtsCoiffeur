@@ -22,7 +22,7 @@
       <td>{{ client.nom }}</td>
       <td>{{ client.prenom }}</td>
       <td>{{ client.dateNaissance|date("d/m/Y") }}</td>
-      <td><a href="detailsclient/{{client.id}}"><button>Détails</button></a><td>
+      <td><a href={{ path('details_client',{'id': client.id}) }}><button>Détails</button></a><td>
     </tr>
   {% endfor %}
   </table>
