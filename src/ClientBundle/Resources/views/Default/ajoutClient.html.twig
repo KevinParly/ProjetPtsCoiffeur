@@ -12,5 +12,6 @@
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}
-
+    <a href={{ path('accueil') }}><button>Retour Accueil</button></a>
+    <a href={{ path('listeclient') }}><button>Retour Liste Clients</button></a>
 {% endblock %}

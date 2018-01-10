@@ -37,7 +37,11 @@ class ClientController extends Controller
             ->add('adresse',TextType::class)
             ->add('codePostal',TextType::class)
             ->add('ville',TextType::class)
-            ->add('dateNaissance',BirthdayType::class)
+            ->add('dateNaissance',BirthdayType::class, array(
+                'placeholder' => array(
+                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
+                'years' => range(date('Y'), date('Y')-100),
+                'format' => 'dd/MM/yyyy',))
             ->add('telephone',TextType::class)
             ->add('remise',NumberType::class)
             ->add('couleur',ChoiceType::class,array(
