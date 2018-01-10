@@ -21,8 +21,6 @@ class ListeClientController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $client = new Client();
-        $annee = date('Y');
-        $centAnneeAvant = $annee - 100;
         $form = $this->createFormBuilder($client)
             ->add('civilite', ChoiceType::class, array(
                 'label' => 'Civilité : ','choices'=>array(
@@ -37,7 +35,7 @@ class ListeClientController extends Controller
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
                 'required' => false,
                 'format' => 'dd/MM/yyyy',
-                'years' => range($centAnneeAvant,$annee)
+                'years' => range(date('Y'), date('Y')-100),
             ))
             ->add('nom',TextType::class, array(
                 'label' => 'Nom client : ',

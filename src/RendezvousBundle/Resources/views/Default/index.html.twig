@@ -1,3 +1,4 @@
+{% extends "FrontBundle::layout.html.twig" %}
 {% block title %}<title>Gestion rendez-vous</title>{% endblock %}
 {% block stylesheets %}
     <link href="{{ asset('assets/css/tab.css') }}" rel="stylesheet" />
@@ -22,6 +23,12 @@
     </div>
 
     <div id="HistoRDV" class="tabcontent">
+        <h1>Rechercher un rendez-vous</h1>
+        {{ form_start(formRecherche) }}
+        {{ form_row(formRecherche.datejour) }}
+        {{ form_widget(formRecherche) }}
+        {{ form_end(formRecherche) }}
+        <h1>Les rendez-vous non effectués</h1>
         <table>
             <tr>
                 <th>Date du rendez-vous</th>
@@ -29,12 +36,23 @@
                 <th>Client</th>
                 <th></th>
             </tr>
-            {% for rdv in rdvs %}
-                <td>{{ rdv.date|date("d/m/Y") }}</td>
-                <td>{{ rdv.heure|date('h:m') }}</td>
-                <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
-                <td><a><button>Détails</button></a></td>
+            {% for rdv in rdvsDuJours %}
+                <tr>
+                    <td>{{ rdv.date|date("d/m/Y") }}</td>
+                    <td>{{ rdv.heure|date('h:m') }}</td>
+                    <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                    <td><a><button>Détails</button></a></td>
+                </tr>
+            {% endfor %}
+            {% for rdv in rdvsNonJour %}
+                <tr>
+                    <td>{{ rdv.date|date("d/m/Y") }}</td>
+                    <td>{{ rdv.heure|date('h:m') }}</td>
+                    <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                    <td><a><button>Détails</button></a></td>
+                </tr>
             {% endfor %}
         </table>
+
     </div>
 {% endblock %}

@@ -10,14 +10,23 @@ namespace ClientBundle\Repository;
  */
 class RendezvousRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function rechercheRdvNonEffectuer($date,$heure){
+    public function rechercheRdvNonEffectuerPasDateJour($date){
         return $this->createQueryBuilder('m')
-                    ->where('m.date >= ?1')
-                    ->andWhere('m.heure >= ?2 ')
+                    ->where('m.date > ?1')
                     ->setParameter(1,$date)
-                    ->setParameter(2,$heure)
                     ->getQuery()
                     ->getResult()
+            ;
+    }
+
+    public function rechercherRdvNonEffectuerDateJour($date,$heure){
+        return $this->createQueryBuilder('m')
+            ->where('m.date = ?1')
+            ->andWhere('m.heure >= ?2 ')
+            ->setParameter(1,$date)
+            ->setParameter(2,$heure)
+            ->getQuery()
+            ->getResult()
             ;
     }
 }
