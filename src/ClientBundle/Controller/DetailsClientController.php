@@ -11,6 +11,7 @@ namespace ClientBundle\Controller;
 use ClientBundle\Entity\Rendezvous;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -34,7 +35,11 @@ class DetailsClientController extends Controller
             ->add('civilite',ChoiceType::class,array('label'=>'Civilité : ','choices'=>array('M'=>'M','Mme'=>'Mme','Enfant'=>'Enfant')))
             ->add('nom',TextType::class,array('label'=>'Nom : '))
             ->add('prenom',TextType::class,array('label'=>'Prénom : '))
-            ->add('dateNaissance',DateType::class,array('label'=>'Date de naissance : ','format'=>'dd/MM/yyyy'))
+            ->add('dateNaissance',BirthdayType::class,array('label'=>'Date de naissance : ',
+                'placeholder' => array(
+                'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
+                'format' => 'dd/MM/yyyy',
+                'years' => range(date('Y'), date('Y')-100)))
             ->add('adresse',TextType::class,array('label'=>'Adresse : '))
             ->add('ville',TextType::class,array('label'=>'Ville : '))
             ->add('codePostal',TextType::class,array('label'=>'Code Postal : '))
@@ -57,8 +62,8 @@ class DetailsClientController extends Controller
         $rdvsClient = $em->getRepository('ClientBundle:Rendezvous')->findBy(array('client'=>$client));
         $rdv = new Rendezvous();
         $formRDV = $this->createFormBuilder($rdv)
-            ->add('date',DateType::class,array('label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false ))
-            ->add('heure',TimeType::class,array('label'=>'Heure du rendez-vous','placeholder' => array('hour' => 'Heure', 'minute' => 'Minute'),'required'=>false))
+            ->add('date',DateType::class,array('label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false, 'years'=>range(2018,date('Y')+1) ))
+            ->add('heure',TimeType::class,array('label'=>'Heure du rendez-vous','placeholder' => array('hour' => 'Heure', 'minute' => 'Minute', 'second' => 'Second'),'required'=>false,'hours'=>range(8,18)))
             ->add('Valider',SubmitType::class)
             ->getForm()
             ->handleRequest($request)
@@ -83,8 +88,10 @@ class DetailsClientController extends Controller
             }
         }
 
+        $RDVSoin = $em->getRepository('ClientBundle:Rendezvous')->findBy(array('client'=>$client));
+        $soins = $em->getRepository('ClientBundle:Soin')->findAll();
         $typeSoins = $em->getRepository('ClientBundle:TypeSoin')->findAll();
         return $this->render('ClientBundle:Default:detailsClient.html.twig',
-            array("client"=>$client,"rdvs"=>$rdvsClient,"typeSoins"=>$typeSoins,"message"=>$message,'form'=>$form->createView(),'formRDV'=>$formRDV->createView()));
+            array("client"=>$client,"rdvs"=>$rdvsClient,"typeSoins"=>$typeSoins,"message"=>$message,'form'=>$form->createView(),'formRDV'=>$formRDV->createView(),"rdvsoin"=>$RDVSoin,"soins"=>$soins));
     }
 }
