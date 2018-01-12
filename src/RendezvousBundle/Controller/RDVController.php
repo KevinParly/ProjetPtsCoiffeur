@@ -81,7 +81,29 @@ class RDVController extends Controller
             ->handleRequest($request)
         ;
         if($formRecherche->isSubmitted() && $formRecherche->isValid() ){
-
+            if($formRecherche->get('datejour')->getData() != null){
+                $rdvsDuJours = $em->getRepository('ClientBundle:Rendezvous')->findBy(['date'=>$formRecherche->get('datejour')->getData()]);
+                $rdvsNonJour = null;
+            }
+            else{
+                if($formRecherche->get('date')->getData() != null){
+                    if($formRecherche->get('heure')->getData() != null){
+                        $rdvsDuJours = null;
+                        $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->findBy(['date'=>$formRecherche->get('date')->getData(),
+                                                                                                      'heure'=>$formRecherche->get('heure')->getData() ]);
+                    }
+                    else{
+                        $rdvsDuJours = null;
+                        $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->findBy(['date'=>$formRecherche->get('date')->getData()]);
+                    }
+                }
+                else{
+                    if($formRecherche->get('heure')->getData() != null){
+                        $rdvsDuJours = null;
+                        $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->findBy(['heure'=>$formRecherche->get('heure')->getData()]);
+                    }
+                }
+            }
         }
 
 
@@ -92,5 +114,17 @@ class RDVController extends Controller
             'rdvsDuJours'=>$rdvsDuJours,
             'rdvsNonJour'=>$rdvsNonJour,
             'date'=>$date));
+    }
+
+    /**
+     * @Route("/detailsrendezvous/{id}",name="rendez_vous_details")
+     */
+    public function detailsRDVController($id){
+        $em = $this->getDoctrine()->getManager();
+        $rdv = $em->getRepository('ClientBundle:Rendezvous')->find($id);
+        $soins = $rdv->getSoins();
+        return $this->render('RendezvousBundle:Default:details.html.twig',array(
+            'rdv'=>$rdv, 'soins'=>$soins
+        ));
     }
 }
