@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ListeClientController extends Controller
 {
     /**
+     * @author Thomas Neuville
      * @Route("/listeclients",name="listeclient")
      */
     public function listeClientAction(Request $request)
@@ -31,15 +32,16 @@ class ListeClientController extends Controller
                 'required' => false
             ))
             ->add('dateNaissance', BirthdayType::class, array(
-                'placeholder' => array(
+                'label' => 'Date de naissance : ','placeholder' => array(
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
                 'required' => false,
                 'format' => 'dd/MM/yyyy',
-                'years' => range(date('Y'), date('Y')-100),
+                'years' => range(date('Y'), date('Y')-100)
             ))
             ->add('nom',TextType::class, array(
                 'label' => 'Nom client : ',
-                'required' => false))
+                'required' => false
+            ))
             ->add('rechercher',SubmitType::class)
             ->getForm()
             ->handleRequest($request);
@@ -56,6 +58,13 @@ class ListeClientController extends Controller
                     }
                     $clients = $em->getRepository('ClientBundle:Client')->findBy(['civilite'=>$form->get('civilite')->getData(),
                         'dateNaissance'=>$form->get('dateNaissance')->getData()]);
+                    return $this->render('ClientBundle:Default:listeClient.html.twig', array(
+                        'clients'=>$clients,
+                        'form' => $form->createView()));
+                }
+                if($form->get('nom')->getData() != null){
+                    $clients = $em->getRepository('ClientBundle:Client')->findBy(['civilite'=>$form->get('civilite')->getData(),
+                        'nom'=>$form->get('nom')->getData()]);
                     return $this->render('ClientBundle:Default:listeClient.html.twig', array(
                         'clients'=>$clients,
                         'form' => $form->createView()));

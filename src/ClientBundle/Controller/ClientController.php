@@ -34,15 +34,16 @@ class ClientController extends Controller
             ))
             ->add('nom',TextType::class)
             ->add('prenom',TextType::class)
-            ->add('adresse',TextType::class)
-            ->add('codePostal',TextType::class)
-            ->add('ville',TextType::class)
             ->add('dateNaissance',BirthdayType::class, array(
                 'placeholder' => array(
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
                 'years' => range(date('Y'), date('Y')-100),
-                'format' => 'dd/MM/yyyy',))
+                'format' => 'dd/MM/yyyy'
+            ))
             ->add('telephone',TextType::class)
+            ->add('adresse',TextType::class)
+            ->add('codePostal',TextType::class)
+            ->add('ville',TextType::class)
             ->add('remise',NumberType::class)
             ->add('couleur',ChoiceType::class,array(
                 'choices'=>array('Oui'=>'1','Non'=>'0'),
