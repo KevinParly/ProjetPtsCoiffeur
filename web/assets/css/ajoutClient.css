@@ -7,7 +7,7 @@ h2{
 #addContainer{
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: relative;
   left: calc(50% - 25% / 2);
   width: 25%;
   -webkit-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
@@ -31,10 +31,26 @@ h2{
   align-items: flex-start;
 }
 
-.formElement{
-  margin: 1em 0 1em 0;
+input[id*='form'], div[id*='form'], label{
+  margin: 1em 0.5em 1em 0;
 }
 
+#form_civilite, #form_couleur{
+  margin-top: -0.2em;
+}
+
+input[type=text]{
+  border: none;
+  border-bottom: 2px solid rgba(0,0,0,.44);
+  border-radius: 2px;
+}
+
+input[type=text]:focus {
+    background-color: lightblue;
+    -webkit-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+    -moz-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+    box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+}
 
 #addContainer a{
   background-color: rgb(48,175,45);

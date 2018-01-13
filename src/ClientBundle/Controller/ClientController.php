@@ -36,8 +36,15 @@ class ClientController extends Controller
                     'Enfant'=>'Enfant'),
                 'expanded'=>true))
             ->add('nom',TextType::class, array(
-                'label' => 'Nom * '))
+                'attr' => array(
+                  'placeholder' => 'Nom'
+                ),
+                'label' => 'Nom * '
+              ))
             ->add('prenom',TextType::class, array(
+                'attr' => array(
+                  'placeholder' => 'Prenom'
+                ),
                 'label' => 'Prénom * '))
             ->add('dateNaissance',BirthdayType::class, array(
                 'label' => 'Date de naissance * ',
@@ -48,15 +55,27 @@ class ClientController extends Controller
                 'years' => range(date('Y'), date('Y')-100),
                 'format' => 'dd/MM/yyyy'))
             ->add('telephone',TextType::class, array(
+                'attr' => array(
+                  'placeholder' => 'n° Téléphone'
+                ),
                 'label' => 'Téléphone ',
                 'required'=>false))
             ->add('adresse',TextType::class, array(
+                'attr' => array(
+                  'placeholder' => 'Adresse'
+                ),
                 'label' => 'Adresse ',
                 'required'=>false))
             ->add('codePostal',TextType::class, array(
+                'attr' => array(
+                  'placeholder' => 'Code postal'
+                ),
                 'label' => 'Code postal ',
                 'required'=>false))
             ->add('ville',TextType::class, array(
+                'attr' => array(
+                  'placeholder' => 'Ville'
+                ),
                 'label' => 'Ville ',
                 'required'=>false))
             ->add('remise',NumberType::class, array(
