@@ -29,29 +29,49 @@ class ClientController extends Controller
         $client = new Client();
         $form = $this->createFormBuilder($client)
             ->add('civilite',ChoiceType::class,array(
-                    'choices'=>array('M'=>'M','Mme'=>'Mme','Enfant'=>'Enfant'),
-                'expanded'=>true
-            ))
-            ->add('nom',TextType::class)
-            ->add('prenom',TextType::class)
+                'label' => 'Civilité * ',
+                'choices'=>array(
+                    'M'=>'M',
+                    'Mme'=>'Mme',
+                    'Enfant'=>'Enfant'),
+                'expanded'=>true))
+            ->add('nom',TextType::class, array(
+                'label' => 'Nom * '))
+            ->add('prenom',TextType::class, array(
+                'label' => 'Prénom * '))
             ->add('dateNaissance',BirthdayType::class, array(
+                'label' => 'Date de naissance * ',
                 'placeholder' => array(
-                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
+                    'year' => 'Année',
+                    'month' => 'Mois',
+                    'day' => 'Jour'),
                 'years' => range(date('Y'), date('Y')-100),
-                'format' => 'dd/MM/yyyy'
-            ))
-            ->add('telephone',TextType::class)
-            ->add('adresse',TextType::class)
-            ->add('codePostal',TextType::class)
-            ->add('ville',TextType::class)
-            ->add('remise',NumberType::class)
+                'format' => 'dd/MM/yyyy'))
+            ->add('telephone',TextType::class, array(
+                'label' => 'Téléphone ',
+                'required'=>false))
+            ->add('adresse',TextType::class, array(
+                'label' => 'Adresse ',
+                'required'=>false))
+            ->add('codePostal',TextType::class, array(
+                'label' => 'Code postal ',
+                'required'=>false))
+            ->add('ville',TextType::class, array(
+                'label' => 'Ville ',
+                'required'=>false))
+            ->add('remise',NumberType::class, array(
+                'label' => 'Remise ',
+                'data'  => '0',
+                'required'=>false))
             ->add('couleur',ChoiceType::class,array(
-                'choices'=>array('Oui'=>'1','Non'=>'0'),
-                'expanded'=>true
-            ))
+                'label' => 'Couleur * ',
+                'choices'=>array(
+                    'Oui'=>'1',
+                    'Non'=>'0'),
+                'expanded'=>true))
             ->add('Enregistrer', SubmitType::class)
-            ->getForm()
-        ;
+            ->getForm();
+
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $clientInsert = $form->getData();
@@ -59,9 +79,10 @@ class ClientController extends Controller
             $em->persist($clientInsert);
             $em->flush();
             $this->addFlash("success", "Vous avez bien inséré le client " . $clientInsert->getNom().' '. $clientInsert->getPrenom());
+            return $this->redirect($request->getUri());
         }
         else{
-            $this->addFlash("kyusoledozo", "Erreur : client non inserer");
+            $this->addFlash("echec", "Erreur lors de l'insertion du client !");
         }
         return $this->render('ClientBundle:Default:ajoutClient.html.twig', array('form'=>$form->createView()));
     }
