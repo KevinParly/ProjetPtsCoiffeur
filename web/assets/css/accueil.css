@@ -1,11 +1,15 @@
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     color: black;
     font-family: Trebuchet MS, sans-serif;
     margin: 0px;
     padding: 0px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
     background-image: url(../images/bg-1.jpg);
     background-repeat:no-repeat;
     background-size: cover;
@@ -24,44 +28,59 @@ header {
     text-align: center;
 }
 
+#buttonContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  top: calc(50% - 260px);
+}
+
 #btn {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    width: 180px;
-    height: 180px;
-    margin: 10px;
-    line-height: 1.5em;
-    text-decoration: none;
-    color: #444444;
-    background-color: #f7f7f7;
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+  line-height: 1.5em;
+  text-decoration: none;
+  color: #444444;
+  background-color: #F7F7F7;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
 
-p {
-    background-color: #aaaaaa;
-    width: 180px;
-    padding-top: 5px;
-    text-align: center;
-    position: relative;
-    height: 30px;
-    left: 0px;
-    top: 129px;
+#btn p {
+  background-color: #AAAAAA;
+  width: 100%;
+  padding-top: 5px;
+  text-align: center;
+  position: relative;
+  height: 30px;
+  left: 0px;
+  top: calc(250px - 50px);
 }
 
-.boutonAccueil {
+.boutonClient,.boutonRDV{
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: 95%;
+  transition: all 0.3s;
+}
+
+.boutonClient {
     background-image: url(../images/clients-logo.png);
-    background-repeat:no-repeat;
-    background-position-x: 5px;
-    background-position-y: 10px;
-    background-size: 95%;
 }
 
 .boutonRDV {
     background-image: url(../images/rdv-logo.png);
-    background-repeat:no-repeat;
-    background-position-x: 22px;
-    background-position-y: 10px;
-    background-size: 76%;
+}
+
+.boutonClient:hover,.boutonRDV:hover{
+    background-size: 110%;
+}
+
+.boutonClient:hover p,.boutonRDV:hover p{
+    color: #FFF;
 }

@@ -5,18 +5,18 @@
 {% endblock %}
 
 {% block stylesheets %}
-    <link href="{{ asset('assets/css/accueil.css') }}" rel="stylesheet" />
+    <link  rel="stylesheet" href="{{ asset('assets/css/accueil.css') }}"/>
 {% endblock %}
 {% block body %}
-    <header><h1>Bienvenue sur l'accueil de l'application</h1></header>
-    <body class="accueil">
-      <div class="menu">
-          <a class="boutonAccueil" id="btn" href={{ path('listeclient') }}>
+    <header>
+      <h1>Bienvenue sur l'accueil de l'application</h1>
+    </header>
+      <div id="buttonContainer">
+          <a class="boutonClient" id="btn" href={{ path('listeclient') }}>
             <p>CLIENTS</p>
           </a>
           <a class="boutonRDV" id="btn" href={{ path('rendezvous') }}>
               <p>RENDEZ-VOUS</p>
           </a>
       </div>
-    </body>
 {% endblock %}

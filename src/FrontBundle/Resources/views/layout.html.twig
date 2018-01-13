@@ -3,14 +3,10 @@
   <head>
       <meta charset="UTF-8" />
       {% block title %}{% endblock %}
-
       <link href="{{ asset('assets/css/layout.css') }}" rel="stylesheet" />
-
-      {% block stylesheets %}
-
-      {% endblock %}
+      {% block stylesheets %}{% endblock %}
+      <meta name="viewport" content="width=device-width"/>
   </head>
-
   <body>
       <nav id="main_nav">
           <ul>
@@ -19,8 +15,7 @@
               <li><a href={{ path('rendezvous') }}>Rendez-vous</a></li>
           </ul>
       </nav>
-    {% block body %}{% endblock %}
-    {% block javascripts %}{% endblock %}
   </body>
-
+  {% block body %}
+  {% endblock %}
 </html>
