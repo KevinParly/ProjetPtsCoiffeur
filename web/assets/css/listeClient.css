@@ -1,0 +1,109 @@
+h2{
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+#mainContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#asideContainer{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 25%;
+  -webkit-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+  -moz-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+  box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#listeContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.625em;
+  align-items:center;
+  width: calc(75% - 2 * 0.5em);
+  position: relative;
+  left: calc(25% + 2 * 0.5em);
+  -webkit-box-shadow: -15px 0px 62px -11px rgba(0,0,0,0.79);
+  -moz-box-shadow: -15px 0px 62px -11px rgba(0,0,0,0.79);
+  box-shadow: -15px 0px 62px -11px rgba(0,0,0,0.79);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#listeClient{
+  width: 90%;
+  border-collapse: collapse;
+}
+
+#categorieTags td, .client td {
+    padding-left: 0.625em;
+    height: 50px;
+}
+
+#categorieTags td{
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: rgb(48,175,45);
+}
+
+.client a, #asideContainer a{
+  background-color: rgb(48,175,45);
+  padding: 5px 15px;
+  border-radius: 2px;
+  transition: all 0.1s;
+}
+
+.client a:hover, #asideContainer a:hover{
+  background-color: rgb(57,209,53);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+}
+
+.client:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.client:hover {
+  background-color: #ccc;
+}
+
+
+.findClientForm{
+  width: auto;
+  padding: 0.5em;
+  border-top: dashed 2px #000;
+  border-bottom: dashed 2px #000;
+}
+
+.findClientForm #form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.formElement{
+  margin: 1em 0 1em 0;
+}
+
+.civiliteForm{}
+
+.naissanceForm{}
+
+.nomForm{}
+
+.rechercherForm{}
+
+#asideContainer a{
+  margin: 0.625em auto;
+  width: 100px;
+}

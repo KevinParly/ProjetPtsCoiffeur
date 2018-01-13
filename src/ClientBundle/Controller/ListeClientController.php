@@ -24,14 +24,18 @@ class ListeClientController extends Controller
         $client = new Client();
         $form = $this->createFormBuilder($client)
             ->add('civilite', ChoiceType::class, array(
-                'label' => 'Civilité : ','choices'=>array(
+                'attr' => array('class' => 'formElement civiliteForm'),
+                'label' => 'Civilité : ',
+                'choices'=>array(
                     'Monsieur'=>'M',
                     'Madame'=>'Mme',
                     'Enfant'=>'Enfant'),
+                'placeholder' => 'Aucun',
                 'expanded' => true,
                 'required' => false
             ))
             ->add('dateNaissance', BirthdayType::class, array(
+                'attr' => array('class' => 'formElement naissanceForm'),
                 'label' => 'Date de naissance : ','placeholder' => array(
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
                 'required' => false,
@@ -39,10 +43,13 @@ class ListeClientController extends Controller
                 'years' => range(date('Y'), date('Y')-100)
             ))
             ->add('nom',TextType::class, array(
+                'attr' => array('class' => 'formElement nomForm'),
                 'label' => 'Nom client : ',
                 'required' => false
             ))
-            ->add('rechercher',SubmitType::class)
+            ->add('rechercher',SubmitType::class, array(
+                'attr' => array('class' => 'formElement rechercherForm')
+            ))
             ->getForm()
             ->handleRequest($request);
 
@@ -106,5 +113,3 @@ class ListeClientController extends Controller
         return $this->render('ClientBundle:Default:listeClient.html.twig',array('clients'=>$clients,'form'=>$form->createView()));
     }
 }
-
-

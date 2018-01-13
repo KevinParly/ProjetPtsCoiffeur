@@ -1,31 +1,41 @@
 {% extends "FrontBundle::layout.html.twig" %}
 {% block title %}<title>Accueil gestion clients</title>{% endblock %}
 {% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('assets/css/listeClient.css') }}"
 {% endblock %}
 {% block body %}
-  <h1>Rechercher un client</h1>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
-  <h1>Liste des clients</h1>
-  <table>
-    <tr>
-      <td>Civilité</td>
-      <td>Nom</td>
-      <td>Prénom</td>
-      <td>Date de naissance</td>
-      <td><td>
-    </tr>
-  {% for client in clients %}
-    <tr>
-      <td>{{ client.civilite }}</td>
-      <td>{{ client.nom }}</td>
-      <td>{{ client.prenom }}</td>
-      <td>{{ client.dateNaissance|date("d/m/Y") }}</td>
-      <td><a href={{ path('details_client',{'id': client.id}) }}><button>Détails</button></a><td>
-    </tr>
-  {% endfor %}
-  </table>
-  <a href={{ path('accueil') }}><button>Retour Accueil</button></a>
-  <a href={{ path('ajoutclient') }}><button>Nouveau client</button></a>
+  <div id="mainContainer">
+    <div id="asideContainer">
+      <h2>Rechercher <br />un client</h2>
+      {{ form_start(form,{'attr' : { 'class':'findClientForm' } }) }}
+      {{ form_widget(form) }}
+      {{ form_end(form) }}
+
+      <h2>Ajouter un client</h2>
+      <a href={{ path('ajoutclient') }}>Nouveau client</a>
+      <a href={{ path('accueil') }}>Retour Accueil</a>
+    </div>
+    <div id="listeContainer">
+      <h2>Liste des clients</h2>
+      <table id="listeClient">
+        <tr id="categorieTags">
+          <td>Civilité</td>
+          <td>Nom</td>
+          <td>Prénom</td>
+          <td>Date de naissance</td>
+          <td></td>
+          <td></td>
+        </tr>
+      {% for client in clients %}
+        <tr class="client">
+          <td>{{ client.civilite }}</td>
+          <td>{{ client.nom }}</td>
+          <td>{{ client.prenom }}</td>
+          <td>{{ client.dateNaissance|date("d/m/Y") }}</td>
+          <td><a href={{ path('details_client',{'id': client.id}) }}>Détails</a><td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+  </div>
 {% endblock %}
