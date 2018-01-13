@@ -54,11 +54,12 @@ input[type=text]:focus {
 
 #addContainer a{
   background-color: rgb(48,175,45);
-  padding: 5px 15px;
+  padding: 5px 20px;
   border-radius: 2px;
   transition: all 0.1s;
   margin: 0.625em auto;
   width: 100px;
+  text-align: center;
 }
 
 #addContainer a:hover{
