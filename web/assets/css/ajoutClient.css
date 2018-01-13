@@ -1,0 +1,53 @@
+h2{
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+#addContainer{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: calc(50% - 25% / 2);
+  width: 25%;
+  -webkit-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+  -moz-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+  box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.findClientForm{
+  width: auto;
+  padding: 0.5em;
+  border-top: dashed 2px #000;
+  border-bottom: dashed 2px #000;
+}
+
+.findClientForm #form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.formElement{
+  margin: 1em 0 1em 0;
+}
+
+
+#addContainer a{
+  background-color: rgb(48,175,45);
+  padding: 5px 15px;
+  border-radius: 2px;
+  transition: all 0.1s;
+  margin: 0.625em auto;
+  width: 100px;
+}
+
+#addContainer a:hover{
+  background-color: rgb(57,209,53);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+}

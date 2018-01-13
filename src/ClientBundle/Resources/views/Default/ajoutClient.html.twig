@@ -1,17 +1,21 @@
 {% extends "FrontBundle::layout.html.twig" %}
 {% block title %}<title>Ajouter un client</title>{% endblock %}
 {% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('assets/css/ajoutClient.css') }}"
 {% endblock %}
 {% block body %}
-    <h1>Nouveau client</h1>
-    {% for message in app.flashes('success') %}
-        <div class="flash-notice">
-            {{ message }}
-        </div>
-    {% endfor %}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
-    <a href={{ path('accueil') }}><button>Retour Accueil</button></a>
-    <a href={{ path('listeclient') }}><button>Retour Liste Clients</button></a>
+    <div id="addContainer">
+      <h2>Nouveau client</h2>
+      {% for message in app.flashes('success') %}
+          <div class="flash-notice">
+              {{ message }}
+          </div>
+      {% endfor %}
+      {{ form_start(form,{'attr' : { 'class':'findClientForm' } }) }}
+      {{ form_widget(form) }}
+      {{ form_end(form) }}
+
+      <a href={{ path('ajoutclient') }}>Nouveau client</a>
+      <a href={{ path('accueil') }}>Retour Accueil</a>
+    </div>
 {% endblock %}
