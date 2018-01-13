@@ -32,20 +32,42 @@ class DetailsClientController extends Controller
         //Form Information Client
         $client = $em->getRepository('ClientBundle:Client')->find($id);
         $form = $this->createFormBuilder($client)
-            ->add('civilite',ChoiceType::class,array('label'=>'Civilité : ','choices'=>array('M'=>'M','Mme'=>'Mme','Enfant'=>'Enfant')))
-            ->add('nom',TextType::class,array('label'=>'Nom : '))
-            ->add('prenom',TextType::class,array('label'=>'Prénom : '))
-            ->add('dateNaissance',BirthdayType::class,array('label'=>'Date de naissance : ',
+            ->add('civilite',ChoiceType::class,array(
+                'label'=>'Civilité : ',
+                'choices'=>array(
+                    'M'=>'M',
+                    'Mme'=>'Mme',
+                    'Enfant'=>'Enfant')))
+            ->add('nom',TextType::class,array(
+                'label'=>'Nom : '))
+            ->add('prenom',TextType::class,array(
+                'label'=>'Prénom : '))
+            ->add('dateNaissance',BirthdayType::class,array(
+                'label'=>'Date de naissance : ',
                 'placeholder' => array(
-                'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
+                    'year' => 'Année',
+                    'month' => 'Mois',
+                    'day' => 'Jour'),
                 'format' => 'dd/MM/yyyy',
                 'years' => range(date('Y'), date('Y')-100)))
-            ->add('adresse',TextType::class,array('label'=>'Adresse : '))
-            ->add('ville',TextType::class,array('label'=>'Ville : '))
-            ->add('codePostal',TextType::class,array('label'=>'Code Postal : '))
-            ->add('remise',TextType::class,array('label'=>'Remise : '))
-            ->add('couleur',ChoiceType::class,array('label'=>'Couleur/Permanante','choices'=>array('Oui'=>1,'Non'=>0)))
-            ->add('save',SubmitType::class,array('label'=>'Modifier le client'))
+            ->add('adresse',TextType::class,array(
+                'label'=>'Adresse : ',
+                'required'=>false))
+            ->add('ville',TextType::class,array(
+                'label'=>'Ville : ',
+                'required'=>false))
+            ->add('codePostal',TextType::class,array(
+                'label'=>'Code Postal : ',
+                'required'=>false))
+            ->add('remise',TextType::class,array(
+                'label'=>'Remise : '))
+            ->add('couleur',ChoiceType::class,array(
+                'label'=>'Couleur/Permanante',
+                'choices'=>array(
+                    'Oui'=>1,
+                    'Non'=>0)))
+            ->add('save',SubmitType::class,array(
+                'label'=>'Modifier le client'))
             ->getForm()
             ->handleRequest($request)
         ;
@@ -55,7 +77,7 @@ class DetailsClientController extends Controller
             $message = "Modification du client réussite !";
         }
         else{
-            $message = "Echec lors de la modification du client";
+            $message = "Echec lors de la modification du client !";
         }
 
         //Form Historique RDV
