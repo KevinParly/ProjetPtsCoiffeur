@@ -45,13 +45,14 @@ class ClientController extends Controller
                   'placeholder' => 'Prenom'),
                 'label' => 'Prénom * '))
             ->add('dateNaissance',BirthdayType::class, array(
-                'label' => 'Date de naissance * ',
+                'label' => 'Date de naissance ',
                 'placeholder' => array(
                     'year' => 'Année',
                     'month' => 'Mois',
                     'day' => 'Jour'),
                 'years' => range(date('Y'), date('Y')-100),
-                'format' => 'dd/MM/yyyy'))
+                'format' => 'dd/MM/yyyy',
+                'required'=>false))
             ->add('telephone',TextType::class, array(
                 'attr' => array(
                   'placeholder' => 'n° Téléphone'),

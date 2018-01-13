@@ -49,7 +49,8 @@ class DetailsClientController extends Controller
                     'month' => 'Mois',
                     'day' => 'Jour'),
                 'format' => 'dd/MM/yyyy',
-                'years' => range(date('Y'), date('Y')-100)))
+                'years' => range(date('Y'), date('Y')-100),
+                'required'=>false))
             ->add('adresse',TextType::class,array(
                 'label'=>'Adresse : ',
                 'required'=>false))
