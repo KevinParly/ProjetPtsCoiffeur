@@ -31,7 +31,7 @@
           <td>{{ client.civilite }}</td>
           <td>{{ client.nom }}</td>
           <td>{{ client.prenom }}</td>
-          <td>{{ client.dateNaissance|date("d/m/Y") }}</td>
+          <td>{{ client.dateNaissance is empty ? "" : client.dateNaissance|date("d/m/Y") }}</td>
           <td><a href={{ path('details_client',{'id': client.id}) }}>Détails</a><td>
         </tr>
       {% endfor %}
