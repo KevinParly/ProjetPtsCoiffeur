@@ -1,7 +1,7 @@
 {% extends "FrontBundle::layout.html.twig" %}
 {% block title %}<title>Gestion rendez-vous</title>{% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/listRendezvous.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/tab.css') }}" />
 {% endblock %}
 
 {% block script %}
@@ -33,36 +33,35 @@
         {{ form_widget(formRecherche) }}
         {{ form_end(formRecherche) }}
       </div>
-
-        <div id="listeContainer">
-          <h2>Les rendez-vous non effectués</h2>
-          <table id="listeRdv">
-              <tr id="categorieTags">
-                  <th>Date du rendez-vous</th>
-                  <th>Heure du rendez-vous</th>
-                  <th>Client</th>
-                  <th>Prix</th>
-                  <th></th>
-              </tr>
-              {% for rdv in rdvsDuJours %}
-                  <tr class="rdv">
-                      <td>{{ rdv.date|date("d/m/Y") }}</td>
-                      <td>{{ rdv.heure|date('h\\hi') }}</td>
-                      <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
-                      <td>{{ rdv.prix }}€</td>
-                      <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
-                  </tr>
-              {% endfor %}
-              {% for rdv in rdvsNonJour %}
-                  <tr class="rdv">
-                      <td>{{ rdv.date|date("d/m/Y") }}</td>
-                      <td>{{ rdv.heure|date('h\\hi') }}</td>
-                      <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
-                      <td>{{ rdv.prix }}€</td>
-                      <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
-                  </tr>
-              {% endfor %}
-          </table>
-        </div>
-    </div>
+      <div id="listeContainer">
+        <h2>Les rendez-vous non effectués</h2>
+        <table id="listeRdv">
+            <tr id="categorieTags">
+                <th>Date du rendez-vous</th>
+                <th>Heure du rendez-vous</th>
+                <th>Client</th>
+                <th>Prix</th>
+                <th></th>
+            </tr>
+            {% for rdv in rdvsDuJours %}
+                <tr class="rdv">
+                    <td>{{ rdv.date|date("d/m/Y") }}</td>
+                    <td>{{ rdv.heure|date('h\\hi') }}</td>
+                    <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                    <td>{{ rdv.prix }}€</td>
+                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
+                </tr>
+            {% endfor %}
+            {% for rdv in rdvsNonJour %}
+                <tr class="rdv">
+                    <td>{{ rdv.date|date("d/m/Y") }}</td>
+                    <td>{{ rdv.heure|date('h\\hi') }}</td>
+                    <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                    <td>{{ rdv.prix }}€</td>
+                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+      </div>
+  </div>
 {% endblock %}

@@ -53,7 +53,7 @@ h2{
   border-bottom-right-radius: 10px;
 }
 
-#listeContainer{
+#listeContainer,#listeContainerFull{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -67,6 +67,10 @@ h2{
   box-shadow: -15px 0px 62px -11px rgba(0,0,0,0.79);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+#listeContainerFull{
+  width: calc(100% - 2 * 0.625em);
+  left: 0;
 }
 
 #listeRdv{
