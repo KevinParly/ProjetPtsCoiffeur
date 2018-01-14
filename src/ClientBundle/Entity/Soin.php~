@@ -171,18 +171,4 @@ class Soin
     {
         return $this->type;
     }
-
-    /**
-     * Set type
-     *
-     * @param \ClientBundle\Entity\TypeSoin $type
-     *
-     * @return Soin
-     */
-    public function setType(\ClientBundle\Entity\TypeSoin $type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
 }

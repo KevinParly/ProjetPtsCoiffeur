@@ -54,7 +54,10 @@ class RDVController extends Controller
             $rdv->setClient($form->get('client')->getData());
             $rdv->setDate($form->get('date')->getData());
             $rdv->setHeure($form->get('heure')->getData());
-            $rdv->setPrix(1);
+            $rdv->setPrix(0);
+            foreach ($form->get('soins')->getData() as $soin){
+                $rdv->setPrix($rdv->getPrix() + $soin->getPrix());
+            }
             $soins = $form->get('soins')->getData();
             foreach ($soins as $soin){
                 $rdv->addSoin($soin);

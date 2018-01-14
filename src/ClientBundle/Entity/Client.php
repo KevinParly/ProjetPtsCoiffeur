@@ -59,21 +59,21 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="adresse", type="string", length=255)
+     * @ORM\Column(name="adresse", type="string", length=255,nullable=true)
      */
     private $adresse;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ville", type="string", length=255)
+     * @ORM\Column(name="ville", type="string", length=255,nullable=true)
      */
     private $ville;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="CodePostal", type="integer")
+     * @ORM\Column(name="CodePostal", type="integer", nullable=true)
      */
     private $codePostal;
 

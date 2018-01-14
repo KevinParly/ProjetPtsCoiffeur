@@ -45,18 +45,21 @@
     </div>
 
     <div id="SoinsRecus" class="tabcontent">
-        <label>Rechercher un type de soins</label>
+        <h1>Les soins perçus </h1>
         <table>
             <tr>
                 <td>Date du rendez-vous</td>
-                <td>Soins Effectués</td>
+                <td>Nom du soin</td>
+                <td>Type du soin</td>
                 <td></td>
             </tr>
+
             {% for rdv in rdvsoin %}
                 {% for soinrdv in rdv.soins %}
                     <tr>
                         <td>{{ rdv.date|date("d/m/Y") }}</td>
                     {% for soin in soins %}
+                        <td>{{ soin.nom }}</td>
                         {% if soin.id == soinrdv.id %}
                             {% for typeSoin in typeSoins %}
                                 {% if typeSoin.id == soin.type.id %}

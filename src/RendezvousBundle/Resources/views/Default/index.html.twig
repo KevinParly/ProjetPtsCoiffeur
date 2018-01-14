@@ -33,22 +33,25 @@
                 <th>Date du rendez-vous</th>
                 <th>Heure du rendez-vous</th>
                 <th>Client</th>
+                <th>Prix</th>
                 <th></th>
             </tr>
             {% for rdv in rdvsDuJours %}
 
                 <tr>
                     <td>{{ rdv.date|date("d/m/Y") }}</td>
-                    <td>{{ rdv.heure|date('h:m') }}</td>
+                    <td>{{ rdv.heure|date('h\\hi') }}</td>
                     <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                    <td>{{ rdv.prix }}€</td>
                     <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
                 </tr>
             {% endfor %}
             {% for rdv in rdvsNonJour %}
                 <tr>
                     <td>{{ rdv.date|date("d/m/Y") }}</td>
-                    <td>{{ rdv.heure|date('h:m') }}</td>
+                    <td>{{ rdv.heure|date('h\\hi') }}</td>
                     <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                    <td>{{ rdv.prix }}€</td>
                     <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
                 </tr>
             {% endfor %}
