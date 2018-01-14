@@ -69,14 +69,14 @@ class RDVController extends Controller
         $heurePrecedante = date('H:i:s',strtotime($heure." - 1 hours"));
         $rdvsDuJours = $em->getRepository('ClientBundle:Rendezvous')->rechercherRdvNonEffectuerDateJour($date,$heurePrecedante);
         $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->rechercheRdvNonEffectuerPasDateJour($date);
-        $formRecherche = $this->createFormBuilder(null)
-            ->add('datejour',CheckboxType::class,array('label'=>'Date du jour ', 'value'=>$date, 'required'=>false))
-            ->add('date',DateType::class,array('format'=>'ddMMyyyy','label'=>'Date recherché','required'=>false,
-                'placeholder' => array(
-                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour')))
-            ->add('heure',TimeType::class,array('label'=>'Heure recherché','required'=>false,'with_seconds'=>false,
-                'widget'=>'text'))
-            ->add('submit',SubmitType::class,array('label'=>'Rechercher'))
+        $rdv = new Rendezvous();
+        $formRDV = $this->createFormBuilder($rdv)
+            ->add('date',DateType::class,array('label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false, 'years'=>range(2018,date('Y')+1) ))
+            ->add('heure',TimeType::class,
+                array('label'=>'Heure du rendez-vous',
+                    'placeholder' => array('hour' => 'Heure', 'minute' => 'Minute', 'second' => 'Second'),
+                    'required'=>false,'hours'=>range(8,18)))
+            ->add('Valider',SubmitType::class)
             ->getForm()
             ->handleRequest($request)
         ;

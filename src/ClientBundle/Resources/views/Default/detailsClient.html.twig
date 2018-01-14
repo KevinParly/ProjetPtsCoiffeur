@@ -36,7 +36,7 @@
             {% for rdv in rdvs %}
                 <tr>
                     <td>{{ rdv.date|date("d/m/Y") }}</td>
-                    <td>{{ rdv.heure|date('H:i') }}</td>
+                    <td>{{ rdv.heure|date('H\\hi') }}</td>
                     <td>{{ rdv.prix }}€</td>
                     <td><a><button>Détails</button></a></td>
                 </tr>
