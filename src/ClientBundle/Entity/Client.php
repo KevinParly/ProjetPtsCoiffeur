@@ -31,7 +31,7 @@ class Client
      /**
       * @var date
       *
-      * @ORM\Column(name="dateNaissance", type="date")
+      * @ORM\Column(name="dateNaissance", type="date", nullable=true)
       */
       private $dateNaissance;
 
@@ -52,7 +52,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="telephone", type="string", length=255)
+     * @ORM\Column(name="telephone", type="string", length=255,nullable=true)
      */
     private $telephone;
 

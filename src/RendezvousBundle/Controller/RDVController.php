@@ -80,36 +80,18 @@ class RDVController extends Controller
             ->getForm()
             ->handleRequest($request)
         ;
-        if($formRecherche->isSubmitted() && $formRecherche->isValid() ){
-            if($formRecherche->get('datejour')->getData() != null){
-                $rdvsDuJours = $em->getRepository('ClientBundle:Rendezvous')->findBy(['date'=>$formRecherche->get('datejour')->getData()]);
-                $rdvsNonJour = null;
-            }
-            else{
-                if($formRecherche->get('date')->getData() != null){
-                    if($formRecherche->get('heure')->getData() != null){
-                        $rdvsDuJours = null;
-                        $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->findBy(['date'=>$formRecherche->get('date')->getData(),
-                                                                                                      'heure'=>$formRecherche->get('heure')->getData() ]);
-                    }
-                    else{
-                        $rdvsDuJours = null;
-                        $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->findBy(['date'=>$formRecherche->get('date')->getData()]);
-                    }
-                }
-                else{
-                    if($formRecherche->get('heure')->getData() != null){
-                        $rdvsDuJours = null;
-                        $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->findBy(['heure'=>$formRecherche->get('heure')->getData()]);
-                    }
-                }
-            }
-        }
+        $formRDV = $this->createFormBuilder($rdv)
+        ->add('date',DateType::class,array('label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false, 'years'=>range(2018,date('Y')+1) ))
+        ->add('heure',TimeType::class,array('label'=>'Heure du rendez-vous','placeholder' => array('hour' => 'Heure', 'minute' => 'Minute', 'second' => 'Second'),'required'=>false,'hours'=>range(8,18)))
+        ->add('Valider',SubmitType::class)
+        ->getForm()
+        ->handleRequest($request)
+    ;
 
 
         return $this->render('RendezvousBundle:Default:index.html.twig',array(
             'form'=>$form->createView(),
-            'formRecherche'=>$formRecherche->createView(),
+            'formRecherche'=>$formRDV->createView(),
             'heure'=>$heurePrecedante,
             'rdvsDuJours'=>$rdvsDuJours,
             'rdvsNonJour'=>$rdvsNonJour,
