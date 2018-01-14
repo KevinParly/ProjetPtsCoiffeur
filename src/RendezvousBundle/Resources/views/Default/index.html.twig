@@ -1,11 +1,13 @@
 {% extends "FrontBundle::layout.html.twig" %}
 {% block title %}<title>Gestion rendez-vous</title>{% endblock %}
 {% block stylesheets %}
-    <link href="{{ asset('assets/css/tab.css') }}" rel="stylesheet" />
-    <script type="text/javascript" src="{{ asset('assets/js/openTab.js') }}">
-        document.getElementById("defaultOpen").click();
-    </script>
+    <link rel="stylesheet" href="{{ asset('assets/css/listRendezvous.css') }}" />
+{% endblock %}
 
+{% block script %}
+  <script type="text/javascript" src="{{ asset('assets/js/openTab.js') }}">
+      document.getElementById("defaultOpen").click();
+  </script>
 {% endblock %}
 
 {% block body %}
@@ -16,46 +18,51 @@
     </div>
 
     <div id="NouveauRDV" class="tabcontent">
+      <div id="asideContainer"/>
         {{ form_start(form) }}
-        {{ form_row(form.client) }}<a href={{ path('ajoutclient') }}><button>Nouveau client</button></a>
+        {{ form_row(form.client) }}<a href={{ path('ajoutclient') }}>Nouveau client</a>
         {{ form_widget(form) }}
         {{ form_end(form) }}
+      </div>
     </div>
 
     <div id="HistoRDV" class="tabcontent">
-        <h1>Rechercher un rendez-vous</h1>
-        {{ form_start(formRecherche) }}
+      <div id="asideContainer">
+        <h2>Rechercher un rendez-vous</h2>
+        {{ form_start(formRecherche,{'attr' : { 'class':'findrdvForm' } }) }}
         {{ form_widget(formRecherche) }}
         {{ form_end(formRecherche) }}
-        <h1>Les rendez-vous non effectués</h1>
-        <table>
-            <tr>
-                <th>Date du rendez-vous</th>
-                <th>Heure du rendez-vous</th>
-                <th>Client</th>
-                <th>Prix</th>
-                <th></th>
-            </tr>
-            {% for rdv in rdvsDuJours %}
+      </div>
 
-                <tr>
-                    <td>{{ rdv.date|date("d/m/Y") }}</td>
-                    <td>{{ rdv.heure|date('h\\hi') }}</td>
-                    <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
-                    <td>{{ rdv.prix }}€</td>
-                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
-                </tr>
-            {% endfor %}
-            {% for rdv in rdvsNonJour %}
-                <tr>
-                    <td>{{ rdv.date|date("d/m/Y") }}</td>
-                    <td>{{ rdv.heure|date('h\\hi') }}</td>
-                    <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
-                    <td>{{ rdv.prix }}€</td>
-                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
-                </tr>
-            {% endfor %}
-        </table>
-
+        <div id="listeContainer">
+          <h2>Les rendez-vous non effectués</h2>
+          <table id="listeRdv">
+              <tr id="categorieTags">
+                  <th>Date du rendez-vous</th>
+                  <th>Heure du rendez-vous</th>
+                  <th>Client</th>
+                  <th>Prix</th>
+                  <th></th>
+              </tr>
+              {% for rdv in rdvsDuJours %}
+                  <tr class="rdv">
+                      <td>{{ rdv.date|date("d/m/Y") }}</td>
+                      <td>{{ rdv.heure|date('h\\hi') }}</td>
+                      <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                      <td>{{ rdv.prix }}€</td>
+                      <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
+                  </tr>
+              {% endfor %}
+              {% for rdv in rdvsNonJour %}
+                  <tr class="rdv">
+                      <td>{{ rdv.date|date("d/m/Y") }}</td>
+                      <td>{{ rdv.heure|date('h\\hi') }}</td>
+                      <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
+                      <td>{{ rdv.prix }}€</td>
+                      <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
+                  </tr>
+              {% endfor %}
+          </table>
+        </div>
     </div>
 {% endblock %}
