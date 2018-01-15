@@ -115,9 +115,8 @@ class DetailsClientController extends Controller
         }
 
         $RDVSoin = $em->getRepository('ClientBundle:Rendezvous')->findBy(array('client'=>$client));
-        $soins = $em->getRepository('ClientBundle:Soin')->findAll();
         $typeSoins = $em->getRepository('ClientBundle:TypeSoin')->findAll();
         return $this->render('ClientBundle:Default:detailsClient.html.twig',
-            array("client"=>$client,"rdvs"=>$rdvsClient,"typeSoins"=>$typeSoins,"message"=>$message,'form'=>$form->createView(),'formRDV'=>$formRDV->createView(),"rdvsoin"=>$RDVSoin,"soins"=>$soins));
+            array("client"=>$client,"rdvs"=>$rdvsClient,"typeSoins"=>$typeSoins,"message"=>$message,'form'=>$form->createView(),'formRDV'=>$formRDV->createView(),"rdvsoin"=>$RDVSoin));
     }
 }

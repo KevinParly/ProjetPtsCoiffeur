@@ -162,28 +162,5 @@ class Rendezvous
     {
         return $this->client;
     }
-
-    /**
-     * Set soin
-     *
-     * @param \ClientBundle\Entity\Soin $soin
-     *
-     * @return Rendezvous
-     */
-    public function setSoin(\ClientBundle\Entity\Soin $soin)
-    {
-        $this->soin = $soin;
-
-        return $this;
-    }
-
-    /**
-     * Get soin
-     *
-     * @return \ClientBundle\Entity\Soin
-     */
-    public function getSoin()
-    {
-        return $this->soin;
-    }
 }
+
