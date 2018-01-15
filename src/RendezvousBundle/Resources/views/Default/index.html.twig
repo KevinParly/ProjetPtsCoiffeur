@@ -41,7 +41,7 @@
             {% for rdv in rdvsDuJours %}
                 <tr class="rdv">
                     <td>{{ rdv.date|date("d/m/Y") }}</td>
-                    <td>{{ rdv.heure|date('h\\hi') }}</td>
+                    <td>{{ rdv.heure|date('H\\hi') }}</td>
                     <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
                     <td>{{ rdv.prix }}€</td>
                     <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
@@ -50,7 +50,7 @@
             {% for rdv in rdvsNonJour %}
                 <tr class="rdv">
                     <td>{{ rdv.date|date("d/m/Y") }}</td>
-                    <td>{{ rdv.heure|date('h\\hi') }}</td>
+                    <td>{{ rdv.heure|date('H\\hi') }}</td>
                     <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
                     <td>{{ rdv.prix }}€</td>
                     <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
