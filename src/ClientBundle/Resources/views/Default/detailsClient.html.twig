@@ -44,7 +44,7 @@
                     <td>{{ rdv.date|date("d/m/Y") }}</td>
                     <td>{{ rdv.heure|date('H\\hi') }}</td>
                     <td>{{ rdv.prix }}€</td>
-                    <td><a>Détails</a></td>
+                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}> >Détails</a></td>
                 </tr>
             {% endfor %}
         </table>
@@ -61,29 +61,14 @@
                 <th>Type du soin</th>
                 <td></td>
             </tr>
-
+            <tr class="rdv">
             {% for rdv in rdvsoin %}
-                {% for soinrdv in rdv.soins %}
-                    <tr class="rdv">
-                        <td>{{ rdv.date|date("d/m/Y") }}</td>
-                    {% for soin in soins %}
-                        <td>{{ soin.nom }}</td>
-                        {% if soin.id == soinrdv.id %}
-                            {% for typeSoin in typeSoins %}
-                                {% if typeSoin.id == soin.type.id %}
-                                    <td>{{ typeSoin.libelle }}</td>
-                                {% endif %}
-                            {% endfor %}
-
-                        {% endif %}
-
-                    {% endfor %}
-                        <td><a>Détails</button></td>
-                    </tr>
-                {% endfor %}
+                <td>{{ rdv.date|date("d/m/Y") }}</td>
+                <td>{{ rdv.soin.nom }}</td>
+                <td>{{ rdv.soin.type.libelle }}</td>
+                <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
             {% endfor %}
+            </tr>
         </table>
-        <label>Dernière couleur effectuer le </label><button>Détails mélange</button>
-
     </div>
 {% endblock %}

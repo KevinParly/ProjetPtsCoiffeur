@@ -28,12 +28,6 @@
     </div>
 
     <div id="HistoRDV" class="tabcontent">
-      <div id="asideContainer">
-        <h2>Rechercher un rendez-vous</h2>
-        {{ form_start(formRecherche,{'attr' : { 'class':'findrdvForm' } }) }}
-        {{ form_widget(formRecherche) }}
-        {{ form_end(formRecherche) }}
-      </div>
       <div id="listeContainer">
         <h2>Les rendez-vous non effectués</h2>
         <table id="listeRdv">
@@ -50,7 +44,7 @@
                     <td>{{ rdv.heure|date('h\\hi') }}</td>
                     <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
                     <td>{{ rdv.prix }}€</td>
-                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
+                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
                 </tr>
             {% endfor %}
             {% for rdv in rdvsNonJour %}
@@ -59,7 +53,7 @@
                     <td>{{ rdv.heure|date('h\\hi') }}</td>
                     <td>{{ rdv.client.nom }} {{ rdv.client.prenom }}</td>
                     <td>{{ rdv.prix }}€</td>
-                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}><button>Détails</button></a></td>
+                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
                 </tr>
             {% endfor %}
         </table>

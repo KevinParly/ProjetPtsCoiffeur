@@ -46,7 +46,7 @@ class RDVController extends Controller
             ->add('heure',TimeType::class,
                 array('label'=>'Heure du rendez-vous :','with_seconds'=>false,
                     'widget'=>'single_text'))
-            ->add('soins',EntityType::class,array('class'=>'ClientBundle:Soin','choice_label'=>'nom','multiple'=>true,'expanded'=>true) )
+            ->add('soin',EntityType::class,array('class'=>'ClientBundle:Soin','choice_label'=>'nom') )
             ->add('save',SubmitType ::class,array('label'=>'Prendre le rendez-vous'))
             ->getForm()
             ->handleRequest($request)
@@ -55,14 +55,8 @@ class RDVController extends Controller
             $rdv->setClient($form->get('client')->getData());
             $rdv->setDate($form->get('date')->getData());
             $rdv->setHeure($form->get('heure')->getData());
-            $rdv->setPrix(0);
-            foreach ($form->get('soins')->getData() as $soin){
-                $rdv->setPrix($rdv->getPrix() + $soin->getPrix());
-            }
-            $soins = $form->get('soins')->getData();
-            foreach ($soins as $soin){
-                $rdv->addSoin($soin);
-            }
+            $rdv->setSoin($form->get('soin')->getData());
+            $rdv->setPrix($rdv->getSoin()->getPrix());
             $em->persist($rdv);
             $em->flush();
         }
@@ -74,7 +68,7 @@ class RDVController extends Controller
         $rdvsDuJours = $em->getRepository('ClientBundle:Rendezvous')->rechercherRdvNonEffectuerDateJour($date,$heurePrecedante);
         $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->rechercheRdvNonEffectuerPasDateJour($date);
         $rdv = new Rendezvous();
-        $formRDV = $this->createFormBuilder($rdv)
+        /*$formRDV = $this->createFormBuilder($rdv)
             ->add('date',DateType::class,array('attr' => array('class' => 'formElement'),'label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false, 'years'=>range(2018,date('Y')+1) ))
             ->add('heure',TimeType::class,
                 array(
@@ -92,12 +86,11 @@ class RDVController extends Controller
         ->add('Rechercher',SubmitType::class)
         ->getForm()
         ->handleRequest($request)
-    ;
+    ;*/
 
 
         return $this->render('RendezvousBundle:Default:index.html.twig',array(
             'form'=>$form->createView(),
-            'formRecherche'=>$formRDV->createView(),
             'heure'=>$heurePrecedante,
             'rdvsDuJours'=>$rdvsDuJours,
             'rdvsNonJour'=>$rdvsNonJour,
@@ -110,9 +103,8 @@ class RDVController extends Controller
     public function detailsRDVController($id){
         $em = $this->getDoctrine()->getManager();
         $rdv = $em->getRepository('ClientBundle:Rendezvous')->find($id);
-        $soins = $rdv->getSoins();
         return $this->render('RendezvousBundle:Default:details.html.twig',array(
-            'rdv'=>$rdv, 'soins'=>$soins
+            'rdv'=>$rdv
         ));
     }
 }
