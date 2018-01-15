@@ -46,9 +46,9 @@ h2{
   position: fixed;
   padding: 1em;
   width: calc(25% - 2 * 1em);
-  -webkit-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
-  -moz-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
-  box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+  -webkit-box-shadow: 32px 59px 62px -30px rgba(0,0,0,0.79);
+  -moz-box-shadow: 32px 59px 62px -30px rgba(0,0,0,0.79);
+  box-shadow: 32px 59px 62px -30px rgba(0,0,0,0.79);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -59,12 +59,12 @@ h2{
   justify-content: space-around;
   padding: 0.625em;
   align-items:center;
-  width: calc(75% - 2 * 0.5em);
+  width: calc(75% - 2 * 1.25em);
   position: relative;
   left: calc(25% + 2 * 0.5em);
-  -webkit-box-shadow: -15px 0px 62px -11px rgba(0,0,0,0.79);
-  -moz-box-shadow: -15px 0px 62px -11px rgba(0,0,0,0.79);
-  box-shadow: -15px 0px 62px -11px rgba(0,0,0,0.79);
+  -webkit-box-shadow: -15px 0px 62px -30px rgba(0,0,0,0.79);
+  -moz-box-shadow: -15px 0px 62px -30px rgba(0,0,0,0.79);
+  box-shadow: -15px 0px 62px -30px rgba(0,0,0,0.79);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -79,6 +79,7 @@ h2{
 }
 
 #categorieTags th, .rdv td {
+    text-align: left;
     padding-left: 0.625em;
     height: 50px;
 }
@@ -99,7 +100,7 @@ h2{
 .rdv a:hover, #asideContainer a:hover{
   background-color: rgb(57,209,53);
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
--moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
 }
 
@@ -136,4 +137,65 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
 
 #form_client{
   margin-bottom: 1em;
+}
+
+
+h2{
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+#addContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    min-width: 500px;
+    -webkit-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+    -moz-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+    box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+    border-radius: 10px;
+}
+
+#addContainer form{
+    width: 100%;
+    padding-top: 2em;
+    border-top: dashed 2px #000;
+}
+
+input[id*='form'], div[id*='form'], label{
+    margin: 1em 0.5em 1em 0;
+}
+
+input[type=text]{
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,.44);
+    border-radius: 2px;
+}
+
+input[type=text]:focus {
+    background-color: lightblue;
+    -webkit-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+    -moz-box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+    box-shadow: 32px 59px 62px -11px rgba(0,0,0,0.79);
+}
+
+#addContainer a{
+    background-color: rgb(48,175,45);
+    padding: 5px 20px;
+    border-radius: 2px;
+    transition: all 0.1s;
+    margin: 0.625em auto;
+    width: 100px;
+    text-align: center;
+}
+
+#addContainer a:hover{
+    background-color: rgb(57,209,53);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
 }

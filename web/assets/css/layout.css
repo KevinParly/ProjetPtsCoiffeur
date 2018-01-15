@@ -5,6 +5,11 @@ html,body{
   margin: 0px;
 }
 
+h1{
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
 a{
     text-decoration: none;
     color: rgb(255,255,255);
