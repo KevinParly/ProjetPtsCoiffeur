@@ -11,18 +11,22 @@
               {{ message }}
           </div>
       {% endfor %}
-      {{ form_start(form,{'attr' : { 'class':'findClientForm' } }) }}
-        {{ form_row(form.civilite) }}
-        {{ form_row(form.nom) }}
-        {{ form_row(form.prenom) }}
-        {{ form_row(form.dateNaissance) }}
-        {{ form_row(form.telephone) }}
-        {{ form_row(form.adresse) }}
-        {{ form_row(form.codePostal) }}
-        {{ form_row(form.ville) }}
-        {{ form_row(form.remise) }}
-        {{ form_row(form.couleur) }}
-      {{ form_end(form) }}
+        {{ form_start(form,{'attr' : { 'class':'findClientForm' } }) }}
+        <div class="formPart">
+          {{ form_row(form.civilite) }}
+          {{ form_row(form.nom) }}
+          {{ form_row(form.prenom) }}
+          {{ form_row(form.dateNaissance) }}
+          {{ form_row(form.telephone) }}
+        </div>
+        <div class="formPart">
+          {{ form_row(form.adresse) }}
+          {{ form_row(form.codePostal) }}
+          {{ form_row(form.ville) }}
+          {{ form_row(form.remise) }}
+          {{ form_row(form.couleur) }}
+        </div>
+        {{ form_end(form) }}
 
       <a href={{ path('listeclient') }}>Liste Clients</a>
       <a href={{ path('accueil') }}>Retour Accueil</a>

@@ -8,6 +8,18 @@ html,body{
 a{
     text-decoration: none;
     color: rgb(255,255,255);
+    transition: all 0.2s;
+}
+
+#main_nav li a{
+  padding: 1em 2em;
+}
+
+#main_nav li a:hover{
+  text-shadow: 2px 2px 2px rgba(255,255,255,.5),
+               -2px 2px 2px rgba(255,255,255,.5),
+               2px -2px 2px rgba(255,255,255,.5),
+               -2px -2px 2px rgba(255,255,255,.5);
 }
 
 #main_nav{

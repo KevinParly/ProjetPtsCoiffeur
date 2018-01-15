@@ -75,9 +75,11 @@ class RDVController extends Controller
         $rdvsNonJour = $em->getRepository('ClientBundle:Rendezvous')->rechercheRdvNonEffectuerPasDateJour($date);
         $rdv = new Rendezvous();
         $formRDV = $this->createFormBuilder($rdv)
-            ->add('date',DateType::class,array('label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false, 'years'=>range(2018,date('Y')+1) ))
+            ->add('date',DateType::class,array('attr' => array('class' => 'formElement'),'label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false, 'years'=>range(2018,date('Y')+1) ))
             ->add('heure',TimeType::class,
-                array('label'=>'Heure du rendez-vous',
+                array(
+                    'attr' => array('class' => 'formElement'),
+                    'label'=>'Heure du rendez-vous',
                     'placeholder' => array('hour' => 'Heure', 'minute' => 'Minute', 'second' => 'Second'),
                     'required'=>false,'hours'=>range(8,18)))
             ->add('Valider',SubmitType::class)
@@ -87,7 +89,7 @@ class RDVController extends Controller
         $formRDV = $this->createFormBuilder($rdv)
         ->add('date',DateType::class,array('label'=>'Date du rendez-vous','placeholder' => array('day' => 'Jour', 'month' => 'Mois','year' => 'Année'),'format' => 'dd/MM/yyyy','required'=>false, 'years'=>range(2018,date('Y')+1) ))
         ->add('heure',TimeType::class,array('label'=>'Heure du rendez-vous','placeholder' => array('hour' => 'Heure', 'minute' => 'Minute', 'second' => 'Second'),'required'=>false,'hours'=>range(8,18)))
-        ->add('Valider',SubmitType::class)
+        ->add('Rechercher',SubmitType::class)
         ->getForm()
         ->handleRequest($request)
     ;
