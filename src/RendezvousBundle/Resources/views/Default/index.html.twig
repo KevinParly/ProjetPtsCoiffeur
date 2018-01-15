@@ -18,7 +18,8 @@
     </div>
 
     <div id="NouveauRDV" class="tabcontent">
-      <div id="asideContainer"/>
+      <div id="addContainer"/>
+        <h2>créer un rendez-vous</h2>
         {{ form_start(form) }}
         {{ form_row(form.client) }}<a href={{ path('ajoutclient') }}>Nouveau client</a>
         {{ form_widget(form) }}
