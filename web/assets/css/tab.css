@@ -59,7 +59,7 @@ h2{
   justify-content: space-around;
   padding: 0.625em;
   align-items:center;
-  width: calc(75% - 2 * 0.5em);
+  width: calc(75% - 2 * 1.25em);
   position: relative;
   left: calc(25% + 2 * 0.5em);
   -webkit-box-shadow: -15px 0px 62px -30px rgba(0,0,0,0.79);
