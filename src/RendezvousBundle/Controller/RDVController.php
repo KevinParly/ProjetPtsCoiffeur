@@ -41,7 +41,8 @@ class RDVController extends Controller
                 'label'=> 'Le client : '
             ))
             ->add('date',DateType::class,array('format'=>'ddMMyyyy','label'=>'Date du rendez-vous : ',
-                'years'=>range($annee,$anneeSuivantes),))
+                'years'=>range($annee,$anneeSuivantes),'placeholder' => array(
+                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour')))
             ->add('heure',TimeType::class,
                 array('label'=>'Heure du rendez-vous :','with_seconds'=>false,
                     'widget'=>'single_text'))
