@@ -2,7 +2,6 @@ body {
     display: flex;
     flex-direction: column;
     color: black;
-    font-family: Trebuchet MS, sans-serif;
     margin: 0px;
     padding: 0px;
     background-image: url(../images/bg-1.jpg);
@@ -10,18 +9,21 @@ body {
     background-size: cover;
 }
 
-header h1 {
-    font-family: Brush Script MT, Brush Script Std, cursive;
-}
-
 header {
-    color:Black;
+    color: #000;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
+
+img{
+    width: 30%;
+    height: auto;
+    background-color: transparent;
+}
+
 
 #buttonContainer{
   display: flex;
@@ -30,7 +32,7 @@ header {
   justify-content: center;
   width: 100%;
   position: relative;
-  top: calc(50% - 260px);
+  top: 2em;
 }
 
 #btn {
