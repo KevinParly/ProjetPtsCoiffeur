@@ -37,14 +37,14 @@
                 <th>Date du rendez-vous</th>
                 <th>Heure du rendez-vous</th>
                 <th>Prix du rendez-vous</th>
-                <td></td>
+                <th></th>
             </tr>
             {% for rdv in rdvs %}
                 <tr class="rdv">
                     <td>{{ rdv.date|date("d/m/Y") }}</td>
                     <td>{{ rdv.heure|date('H\\hi') }}</td>
                     <td>{{ rdv.prix }}€</td>
-                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}> >Détails</a></td>
+                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
                 </tr>
             {% endfor %}
         </table>
@@ -59,16 +59,17 @@
                 <th>Date du rendez-vous</th>
                 <th>Nom du soin</th>
                 <th>Type du soin</th>
-                <td></td>
+                <th></th>
             </tr>
-            <tr class="rdv">
             {% for rdv in rdvsoin %}
-                <td>{{ rdv.date|date("d/m/Y") }}</td>
-                <td>{{ rdv.soin.nom }}</td>
-                <td>{{ rdv.soin.type.libelle }}</td>
-                <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
+                <tr class="rdv">
+                    <td>{{ rdv.date|date("d/m/Y") }}</td>
+                    <td>{{ rdv.soin.nom }}</td>
+                    <td>{{ rdv.soin.type.libelle }}</td>
+                    <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
+                </tr>
             {% endfor %}
-            </tr>
+
         </table>
     </div>
 {% endblock %}
