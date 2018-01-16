@@ -27,6 +27,7 @@ class ClientController extends Controller
      */
     public function AjoutClientAction(Request $request){
         $client = new Client();
+        $client->setCouleur(false);
         $form = $this->createFormBuilder($client)
             ->add('civilite',ChoiceType::class,array(
                 'label' => 'Civilité * ',
@@ -63,25 +64,25 @@ class ClientController extends Controller
                   'placeholder' => 'Adresse'),
                 'label' => 'Adresse ',
                 'required'=>false))
+            ->add('ville',TextType::class, array(
+                'attr' => array(
+                    'placeholder' => 'Ville'),
+                'label' => 'Ville ',
+                'required'=>false))
             ->add('codePostal',TextType::class, array(
                 'attr' => array(
                   'placeholder' => 'Code postal'),
                 'label' => 'Code postal ',
-                'required'=>false))
-            ->add('ville',TextType::class, array(
-                'attr' => array(
-                  'placeholder' => 'Ville'),
-                'label' => 'Ville ',
                 'required'=>false))
             ->add('remise',NumberType::class, array(
                 'label' => 'Remise ',
                 'data'  => '0',
                 'required'=>false))
             ->add('couleur',ChoiceType::class,array(
-                'label' => 'Couleur * ',
+                'label' => 'Couleur ',
                 'choices'=>array(
-                    'Oui'=>'1',
-                    'Non'=>'0'),
+                    'Non'=>'0',
+                    'Oui'=>'1'),
                 'expanded'=>true))
             ->add('Enregistrer', SubmitType::class)
             ->getForm();
@@ -90,6 +91,8 @@ class ClientController extends Controller
         if($form->isSubmitted() && $form->isValid()){
             $clientInsert = $form->getData();
             $em = $this->getDoctrine()->getManager();
+            $clientInsert->setNom(strtoupper($form->get('nom')->getData()));
+            $clientInsert->setVille(strtoupper($form->get('ville')->getData()));
             $em->persist($clientInsert);
             $em->flush();
             $this->addFlash("success", "Vous avez bien inséré le client " . $clientInsert->getNom().' '. $clientInsert->getPrenom());
