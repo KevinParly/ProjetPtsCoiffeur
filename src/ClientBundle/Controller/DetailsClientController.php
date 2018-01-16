@@ -52,7 +52,9 @@ class DetailsClientController extends Controller
                 'format' => 'dd/MM/yyyy',
                 'years' => range(date('Y'), date('Y') - 100),
                 'required' => false))
-            ->add('telephone',TextType::class,array('label'=> 'Téléphone '))
+            ->add('telephone',TextType::class,array(
+                'label'=> 'Téléphone : ',
+                'required' => false))
             ->add('adresse', TextType::class, array(
                 'label' => 'Adresse : ',
                 'required' => false))

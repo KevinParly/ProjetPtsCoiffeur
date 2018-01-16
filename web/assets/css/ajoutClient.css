@@ -83,9 +83,14 @@ input[type=text]:focus {
   text-align: center;
 }
 
+#addContainer p{
+  padding: 10px;
+  margin: 0px;
+}
+
 #addContainer a:hover{
   background-color: rgb(57,209,53);
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
--moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+ -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
+ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.87);
 }
