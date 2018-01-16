@@ -59,6 +59,7 @@ class RDVController extends Controller
             $rdv->setPrix($rdv->getSoin()->getPrix());
             $em->persist($rdv);
             $em->flush();
+            return $this->redirect($request->getUri());
         }
 
         //Pane Liste RDV non effectuer

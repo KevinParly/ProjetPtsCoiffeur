@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Le client {{ client.nom }} {{ client.prenom }}</h1>
+    <h1>Détails du client</h1>
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'InfoClient')" id="defaultOpen">Information du client</button>
         <button class="tablinks" onclick="openTab(event, 'HistoRDV')">Historique des rendez-vous</button>
@@ -32,6 +32,9 @@
         {{ form_end(formRDV) }}
       </div>
       <div id="listeContainer">
+          {% if form_errors(formRDV) %}
+              cvfg
+          {% endif %}
         <table id="listeRdv">
             <tr id="categorieTags">
                 <th>Date du rendez-vous</th>
@@ -68,6 +71,15 @@
                     <td>{{ rdv.soin.type.libelle }}</td>
                     <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
                 </tr>
+            {% endfor %}
+
+            {% for rdv in rdvsoin %}
+            <tr class="rdv">
+                <td>{{ rdv.date|date("d/m/Y") }}</td>
+                <td>{{ rdv.soin.nom }}</td>
+                <td>{{ rdv.soin.type.libelle }}</td>
+                <td><a href={{ path('rendez_vous_details',{'id':rdv.id}) }}>Détails</a></td>
+            </tr>
             {% endfor %}
 
         </table>
