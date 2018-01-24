@@ -26,26 +26,26 @@ class Client
      *
      * @ORM\Column(name="civilite", type="string", length=255)
      */
-     private $civilite;
-
-     /**
-      * @var int
-      *
-      * @ORM\Column(name="jourNaissance", type="integer", nullable=true)
-      */
-      private $jourNaissance;
+    private $civilite;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="moisNaissance", type="integer", nullable=true)
+     * @ORM\Column(name="jourNaissance", type="string", nullable=true)
+     */
+    private $jourNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="moisNaissance", type="string", nullable=true)
      */
     private $moisNaissance;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="anneeNaissance", type="integer", nullable=true)
+     * @ORM\Column(name="anneeNaissance", type="string", nullable=true)
      */
     private $anneeNaissance;
 
@@ -339,7 +339,7 @@ class Client
     /**
      * Set jourNaissance
      *
-     * @param int $jourNaissance
+     * @param string $jourNaissance
      *
      * @return Client
      */
@@ -353,7 +353,7 @@ class Client
     /**
      * Get jourNaissance
      *
-     * @return int
+     * @return string
      */
     public function getJourNaissance()
     {
@@ -363,7 +363,7 @@ class Client
     /**
      * Set moisNaissance
      *
-     * @param int $moisNaissance
+     * @param string $moisNaissance
      *
      * @return Client
      */
@@ -377,7 +377,7 @@ class Client
     /**
      * Get moisNaissance
      *
-     * @return int
+     * @return string
      */
     public function getMoisNaissance()
     {
@@ -387,7 +387,7 @@ class Client
     /**
      * Set anneeNaissance
      *
-     * @param int $anneeNaissance
+     * @param string $anneeNaissance
      *
      * @return Client
      */
@@ -401,7 +401,7 @@ class Client
     /**
      * Get anneeNaissance
      *
-     * @return int
+     * @return string
      */
     public function getAnneeNaissance()
     {

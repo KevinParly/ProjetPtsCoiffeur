@@ -1,15 +1,15 @@
 {% extends "FrontBundle::layout.html.twig" %}
 {% block title %}<title>Accueil gestion clients</title>{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('assets/css/listeClient.css') }}"
+  <link rel="stylesheet" href="{{ asset('assets/css/listeClient.css') }}"
 {% endblock %}
 {% block body %}
   <div id="mainContainer">
     <div id="asideContainer">
       <h2>Rechercher <br />un client</h2>
-      {{ form_start(form,{'attr' : { 'class':'findClientForm' } }) }}
-      {{ form_widget(form) }}
-      {{ form_end(form) }}
+        {{ form_start(form,{'attr' : { 'class':'findClientForm' } }) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
 
       <h2>Ajouter un client</h2>
       <a href={{ path('ajoutclient') }}>Nouveau client</a>
@@ -22,19 +22,23 @@
           <td>Civilité</td>
           <td>Nom</td>
           <td>Prénom</td>
-          <td>Date de naissance</td>
+          <td>Jour</td>
+          <td>Mois</td>
+          <td>Année</td>
           <td></td>
           <td></td>
         </tr>
-      {% for client in clients %}
-        <tr class="client">
-          <td>{{ client.civilite }}</td>
-          <td>{{ client.nom }}</td>
-          <td>{{ client.prenom }}</td>
-          <td>{{ client.dateNaissance is empty ? "" : client.dateNaissance|date("d/m/Y") }}</td>
-          <td><a href={{ path('details_client',{'id': client.id}) }}>Détails</a><td>
-        </tr>
-      {% endfor %}
+          {% for client in clients %}
+            <tr class="client">
+              <td>{{ client.civilite }}</td>
+              <td>{{ client.nom }}</td>
+              <td>{{ client.prenom }}</td>
+              <td>{{ client.jourNaissance }}</td>
+              <td>{{ client.moisNaissance }}</td>
+              <td>{{ client.anneeNaissance }}</td>
+              <td><a href={{ path('details_client',{'id': client.id}) }}>Détails</a><td>
+            </tr>
+          {% endfor %}
       </table>
     </div>
   </div>

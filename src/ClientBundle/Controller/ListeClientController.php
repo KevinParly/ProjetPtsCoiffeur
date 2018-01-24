@@ -8,6 +8,7 @@ use ClientBundle\Entity\Client;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,13 +35,24 @@ class ListeClientController extends Controller
                 'expanded' => true,
                 'required' => false
             ))
-            ->add('dateNaissance', BirthdayType::class, array(
-                'attr' => array('class' => 'formElement naissanceForm'),
-                'label' => 'Date de naissance : ','placeholder' => array(
-                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
+            ->add('moisNaissance', ChoiceType::class, array(
+                'attr' => array('class' => 'formElement moisNaissanceForm'),
+                'label' => 'Mois de Naissance : ',
+                'choices'=>array(
+                    'Janvier'=>'01',
+                    'Février'=>'02',
+                    'Mars'=>'03',
+                    'Avril'=>'04',
+                    'Mai'=>'05',
+                    'Juin'=>'06',
+                    'Juillet'=>'07',
+                    'Août'=>'08',
+                    'Septembre'=>'09',
+                    'Octobre'=>'10',
+                    'Novembre'=>'11',
+                    'Décembre'=>'12'),
+                'placeholder' => 'Aucun',
                 'required' => false,
-                'format' => 'dd/MM/yyyy',
-                'years' => range(date('Y'), date('Y')-100)
             ))
             ->add('nom',TextType::class, array(
                 'attr' => array('class' => 'formElement nomForm'),
@@ -55,16 +67,16 @@ class ListeClientController extends Controller
 
         if($form->isSubmitted() && $form->isValid()){
             if($form->get('civilite')->getData() != null){
-                if($form->get('dateNaissance')->getData() != null){
+                if($form->get('moisNaissance')->getData() != null){
                     if($form->get('nom')->getData() != null){
                         $clients = $em->getRepository('ClientBundle:Client')->findBy(['civilite'=>$form->get('civilite')->getData(),
-                            'dateNaissance'=>$form->get('dateNaissance')->getData(),'nom'=>$form->get('nom')->getData()]);
+                            'moisNaissance'=>$form->get('moisNaissance')->getData(),'nom'=>$form->get('nom')->getData()]);
                         return $this->render('ClientBundle:Default:listeClient.html.twig', array(
                             'clients'=>$clients,
                             'form' => $form->createView()));
                     }
                     $clients = $em->getRepository('ClientBundle:Client')->findBy(['civilite'=>$form->get('civilite')->getData(),
-                        'dateNaissance'=>$form->get('dateNaissance')->getData()]);
+                        'moisNaissance'=>$form->get('moisNaissance')->getData()]);
                     return $this->render('ClientBundle:Default:listeClient.html.twig', array(
                         'clients'=>$clients,
                         'form' => $form->createView()));
@@ -80,15 +92,15 @@ class ListeClientController extends Controller
                 return $this->render('ClientBundle:Default:listeClient.html.twig', array(
                     'clients'=>$clients,
                     'form' => $form->createView()));
-            }elseif ($form->get('dateNaissance')->getData() != null){
+            }elseif ($form->get('moisNaissance')->getData() != null){
                 if($form->get('nom')->getData() != null){
-                    $clients = $em->getRepository('ClientBundle:Client')->findBy(['dateNaissance'=>$form->get('dateNaissance')->getData(),
+                    $clients = $em->getRepository('ClientBundle:Client')->findBy(['moisNaissance'=>$form->get('moisNaissance')->getData(),
                         'nom'=>$form->get('nom')->getData()]);
                     return $this->render('ClientBundle:Default:listeClient.html.twig', array(
                         'clients'=>$clients,
                         'form' => $form->createView()));
                 }
-                $clients = $em->getRepository('ClientBundle:Client')->findBy(['dateNaissance'=>$form->get('dateNaissance')->getData()]);
+                $clients = $em->getRepository('ClientBundle:Client')->findBy(['moisNaissance'=>$form->get('moisNaissance')->getData()]);
                 return $this->render('ClientBundle:Default:listeClient.html.twig', array(
                     'clients'=>$clients,
                     'form' => $form->createView()));
