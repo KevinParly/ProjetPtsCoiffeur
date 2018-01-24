@@ -31,21 +31,21 @@ class Client
      /**
       * @var int
       *
-      * @ORM\Column(name="jourNaissance", type="date", nullable=true)
+      * @ORM\Column(name="jourNaissance", type="integer", nullable=true)
       */
       private $jourNaissance;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="moisNaissance", type="date", nullable=true)
+     * @ORM\Column(name="moisNaissance", type="integer", nullable=true)
      */
     private $moisNaissance;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="anneeNaissance", type="date", nullable=true)
+     * @ORM\Column(name="anneeNaissance", type="integer", nullable=true)
      */
     private $anneeNaissance;
 
