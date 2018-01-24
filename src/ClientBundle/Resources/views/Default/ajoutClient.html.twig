@@ -16,7 +16,11 @@
           {{ form_row(form.civilite) }}
           {{ form_row(form.nom) }}
           {{ form_row(form.prenom) }}
-          {{ form_row(form.dateNaissance) }}
+            <div class="dateNaissanceContainer">
+                {{ form_row(form.jourNaissance) }}
+                {{ form_row(form.jourNaissance) }}
+                {{ form_row(form.jourNaissance) }}
+            </div>
           {{ form_row(form.telephone) }}
         </div>
         <div class="formPart">

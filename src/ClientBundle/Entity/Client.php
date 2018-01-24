@@ -339,7 +339,7 @@ class Client
     /**
      * Set jourNaissance
      *
-     * @param \DateTime $jourNaissance
+     * @param int $jourNaissance
      *
      * @return Client
      */
@@ -353,7 +353,7 @@ class Client
     /**
      * Get jourNaissance
      *
-     * @return \DateTime
+     * @return int
      */
     public function getJourNaissance()
     {
@@ -363,7 +363,7 @@ class Client
     /**
      * Set moisNaissance
      *
-     * @param \DateTime $moisNaissance
+     * @param int $moisNaissance
      *
      * @return Client
      */
@@ -377,7 +377,7 @@ class Client
     /**
      * Get moisNaissance
      *
-     * @return \DateTime
+     * @return int
      */
     public function getMoisNaissance()
     {
@@ -387,7 +387,7 @@ class Client
     /**
      * Set anneeNaissance
      *
-     * @param \DateTime $anneeNaissance
+     * @param int $anneeNaissance
      *
      * @return Client
      */
@@ -401,10 +401,14 @@ class Client
     /**
      * Get anneeNaissance
      *
-     * @return \DateTime
+     * @return int
      */
     public function getAnneeNaissance()
     {
         return $this->anneeNaissance;
+    }
+
+    public function dateNaissance(){
+        return $this->jourNaissance . "/" .$this->moisNaissance . "/" . $this->anneeNaissance;
     }
 }
