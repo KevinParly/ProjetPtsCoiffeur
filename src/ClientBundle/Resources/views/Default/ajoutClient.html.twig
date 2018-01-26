@@ -16,10 +16,14 @@
           {{ form_row(form.civilite) }}
           {{ form_row(form.nom) }}
           {{ form_row(form.prenom) }}
+
             <div class="dateNaissanceContainer">
-                {{ form_row(form.jourNaissance) }}
-                {{ form_row(form.moisNaissance) }}
+              <p>Date de naissance</p>
+              <div class="dateNaissanceForm">
+                {{ form_row(form.jourNaissance) }}<p>/</p>
+                {{ form_row(form.moisNaissance) }}<p>/</p>
                 {{ form_row(form.anneeNaissance) }}
+              </div>
             </div>
           {{ form_row(form.telephone) }}
         </div>
