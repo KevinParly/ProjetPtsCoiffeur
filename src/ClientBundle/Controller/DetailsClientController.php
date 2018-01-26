@@ -43,15 +43,19 @@ class DetailsClientController extends Controller
                 'label' => 'Nom : '))
             ->add('prenom', TextType::class, array(
                 'label' => 'Prénom : '))
-            ->add('dateNaissance', BirthdayType::class, array(
+            ->add('jourNaissance',TextType::class, array(
+                'attr' => array('class' => 'formElement jourForm'),
                 'label' => 'Date de naissance : ',
-                'placeholder' => array(
-                    'year' => 'Année',
-                    'month' => 'Mois',
-                    'day' => 'Jour'),
-                'format' => 'dd/MM/yyyy',
-                'years' => range(date('Y'), date('Y') - 100),
-                'required' => false))
+                'required' => false
+            ))
+            ->add('moisNaissance',TextType::class, array(
+                'attr' => array('class' => 'formElement moisForm'),
+                'required' => false
+            ))
+            ->add('anneeNaissance',TextType::class, array(
+                'attr' => array('class' => 'formElement anneeForm'),
+                'required' => false
+            ))
             ->add('telephone',TextType::class,array(
                 'label'=> 'Téléphone : ',
                 'required' => false))
